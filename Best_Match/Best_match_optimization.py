@@ -25,7 +25,7 @@
 
 #We create an inverted index with an entry for every word of a document or for any word on which advertisers requested to appear
 def create_word_advs():
-    infile = open("database.txt")
+    infile = open("test.txt")
     word_advs = dict()
 
     wordsInDoc = dict()
@@ -88,7 +88,6 @@ def best_match_buono (query, threshold):
         #We use a threshold to choose which document must be returned
             if adv_weights[doc] >= threshold:
                 best_docs.add(doc)
-    print(adv_weights)
     return best_docs
 
 def best_match(query, threshold):
@@ -117,9 +116,8 @@ def best_match(query, threshold):
             if adv_weights[doc] >= threshold:
                 best_docs.add(doc)
 
-    print (word_advs)
-    print(x)
-    print (impact)
+    print(word_advs)
+
     return best_docs
 
 def insert_sorted (impact, word, freq):
@@ -182,8 +180,8 @@ def insert_sort_list (lista,doc,freq):
 
 
 #create_word_advs()
-set = best_match("esempio prova",0)
-
+set = best_match("Fox",0)
+print(set)
 #set2 = exact_match("prova esame")
 #print(set)
 #print(set2)

@@ -1,0 +1,1268 @@
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/robots.txt
+Date: 
+Position: 0
+DocId: 0
+
+HTTP/1.0 200 OK
+Vary: Accept-Encoding
+Content-Type: text/plain
+Last-Modified: Mon, 10 Dec 2012 19:03:51 GMT
+Date: Wed, 02 Jan 2013 04:45:29 GMT
+Expires: Wed, 02 Jan 2013 04:45:29 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 1; mode=block
+
+User-agent: *
+Disallow: /search
+Disallow: /sdch
+Disallow: /groups
+Disallow: /images
+Disallow: /catalogs
+Allow: /catalogs/about
+Allow: /catalogs/p?
+Disallow: /catalogues
+Disallow: /news
+Allow: /news/directory
+Disallow: /nwshp
+Disallow: /setnewsprefs?
+Disallow: /index.html?
+Disallow: /?
+Allow: /?hl=
+Disallow: /?hl=*&
+Disallow: /addurl/image?
+Disallow: /pagead/
+Disallow: /relpage/
+Disallow: /relcontent
+Disallow: /imgres
+Disallow: /imglanding
+Disallow: /sbd
+Disallow: /keyword/
+Disallow: /u/
+Disallow: /univ/
+Disallow: /cobrand
+Disallow: /custom
+Disallow: /advanced_group_search
+Disallow: /googlesite
+Disallow: /preferences
+Disallow: /setprefs
+Disallow: /swr
+Disallow: /url
+Disallow: /default
+Disallow: /m?
+Disallow: /m/?
+Disallow: /m/blogs?
+Disallow: /m/directions?
+Disallow: /m/ig
+Disallow: /m/images?
+Disallow: /m/imgres?
+Disallow: /m/local?
+Disallow: /m/movies?
+Disallow: /m/news?
+Disallow: /m/news/i?
+Disallow: /m/place?
+Disallow: /m/products?
+Disallow: /m/products/
+Disallow: /m/setnewsprefs?
+Disallow: /m/search?
+Disallow: /m/swmloptin?
+Disallow: /m/trends
+Disallow: /m/video?
+Disallow: /wml?
+Disallow: /wml/?
+Disallow: /wml/search?
+Disallow: /xhtml?
+Disallow: /xhtml/?
+Disallow: /xhtml/search?
+Disallow: /xml?
+Disallow: /imode?
+Disallow: /imode/?
+Disallow: /imode/search?
+Disallow: /jsky?
+Disallow: /jsky/?
+Disallow: /jsky/search?
+Disallow: /pda?
+Disallow: /pda/?
+Disallow: /pda/search?
+Disallow: /sprint_xhtml
+Disallow: /sprint_wml
+Disallow: /pqa
+Disallow: /palm
+Disallow: /gwt/
+Disallow: /purchases
+Disallow: /hws
+Disallow: /bsd?
+Disallow: /linux?
+Disallow: /mac?
+Disallow: /microsoft?
+Disallow: /unclesam?
+Disallow: /answers/search?q=
+Disallow: /local?
+Disallow: /local_url
+Disallow: /shihui?
+Disallow: /shihui/
+Disallow: /froogle?
+Disallow: /products?
+Disallow: /products/
+Disallow: /froogle_
+Disallow: /product_
+Disallow: /products_
+Disallow: /products;
+Disallow: /print
+Disallow: /books/
+Disallow: /bkshp?*q=*
+Disallow: /books?*q=*
+Disallow: /books?*output=*
+Disallow: /books?*pg=*
+Disallow: /books?*jtp=*
+Disallow: /books?*jscmd=*
+Disallow: /books?*buy=*
+Disallow: /books?*zoom=*
+Allow: /books?*q=related:*
+Allow: /books?*q=editions:*
+Allow: /books?*q=subject:*
+Allow: /books/about
+Allow: /booksrightsholders
+Allow: /books?*zoom=1*
+Allow: /books?*zoom=5*
+Disallow: /ebooks/
+Disallow: /ebooks?*q=*
+Disallow: /ebooks?*output=*
+Disallow: /ebooks?*pg=*
+Disallow: /ebooks?*jscmd=*
+Disallow: /ebooks?*buy=*
+Disallow: /ebooks?*zoom=*
+Allow: /ebooks?*q=related:*
+Allow: /ebooks?*q=editions:*
+Allow: /ebooks?*q=subject:*
+Allow: /ebooks?*zoom=1*
+Allow: /ebooks?*zoom=5*
+Disallow: /patents?
+Disallow: /patents/related/
+Allow: /patents?id=
+Allow: /patents?vid=
+Disallow: /scholar
+Disallow: /citations?
+Allow: /citations?user=
+Allow: /citations?view_op=new_profile
+Allow: /citations?view_op=top_venues
+Disallow: /complete
+Disallow: /s?
+Disallow: /sponsoredlinks
+Disallow: /videosearch?
+Disallow: /videopreview?
+Disallow: /videoprograminfo?
+Disallow: /maps?
+Disallow: /mapstt?
+Disallow: /mapslt?
+Disallow: /maps/stk/
+Disallow: /maps/br?
+Disallow: /mapabcpoi?
+Disallow: /maphp?
+Disallow: /mapprint?
+Disallow: /maps/api/js/StaticMapService.GetMapImage?
+Disallow: /maps/api/staticmap?
+Disallow: /mld?
+Disallow: /staticmap?
+Disallow: /places/
+Allow: /places/$
+Disallow: /maps/place
+Disallow: /help/maps/streetview/partners/welcome/
+Disallow: /help/maps/indoormaps/partners/
+Disallow: /lochp?
+Disallow: /center
+Disallow: /ie?
+Disallow: /sms/demo?
+Disallow: /katrina?
+Disallow: /blogsearch?
+Disallow: /blogsearch/
+Disallow: /blogsearch_feeds
+Disallow: /advanced_blog_search
+Disallow: /reader/
+Allow: /reader/play
+Disallow: /uds/
+Disallow: /chart?
+Disallow: /transit?
+Disallow: /mbd?
+Disallow: /extern_js/
+Disallow: /calendar/feeds/
+Disallow: /calendar/ical/
+Disallow: /cl2/feeds/
+Disallow: /cl2/ical/
+Disallow: /coop/directory
+Disallow: /coop/manage
+Disallow: /trends?
+Disallow: /trends/music?
+Disallow: /trends/hottrends?
+Disallow: /trends/viz?
+Disallow: /notebook/search?
+Disallow: /musica
+Disallow: /musicad
+Disallow: /musicas
+Disallow: /musicl
+Disallow: /musics
+Disallow: /musicsearch
+Disallow: /musicsp
+Disallow: /musiclp
+Disallow: /browsersync
+Disallow: /call
+Disallow: /archivesearch?
+Disallow: /archivesearch/url
+Disallow: /archivesearch/advanced_search
+Disallow: /base/reportbadoffer
+Disallow: /urchin_test/
+Disallow: /movies?
+Disallow: /codesearch?
+Disallow: /codesearch/feeds/search?
+Disallow: /wapsearch?
+Disallow: /safebrowsing
+Allow: /safebrowsing/diagnostic
+Allow: /safebrowsing/report_badware/
+Allow: /safebrowsing/report_error/
+Allow: /safebrowsing/report_phish/
+Disallow: /reviews/search?
+Disallow: /orkut/albums
+Allow: /jsapi
+Disallow: /views?
+Disallow: /c/
+Disallow: /cbk
+Allow: /cbk?output=tile&cb_client=maps_sv
+Disallow: /recharge/dashboard/car
+Disallow: /recharge/dashboard/static/
+Disallow: /translate_a/
+Disallow: /translate_c
+Disallow: /translate_f
+Disallow: /translate_static/
+Disallow: /translate_suggestion
+Disallow: /profiles/me
+Allow: /profiles
+Disallow: /s2/profiles/me
+Allow: /s2/profiles
+Allow: /s2/photos
+Allow: /s2/static
+Disallow: /s2
+Allow: /s2/search/social
+Disallow: /transconsole/portal/
+Disallow: /gcc/
+Disallow: /aclk
+Disallow: /cse?
+Disallow: /cse/home
+Disallow: /cse/panel
+Disallow: /cse/manage
+Disallow: /tbproxy/
+Disallow: /imesync/
+Disallow: /shenghuo/search?
+Disallow: /support/forum/search?
+Disallow: /reviews/polls/
+Disallow: /hosted/images/
+Disallow: /ppob/?
+Disallow: /ppob?
+Disallow: /ig/add?
+Disallow: /adwordsresellers
+Disallow: /accounts/o8
+Allow: /accounts/o8/id
+Disallow: /topicsearch?q=
+Disallow: /xfx7/
+Disallow: /squared/api
+Disallow: /squared/search
+Disallow: /squared/table
+Disallow: /toolkit/
+Allow: /toolkit/*.html
+Disallow: /globalmarketfinder/
+Allow: /globalmarketfinder/*.html
+Disallow: /qnasearch?
+Disallow: /app/updates
+Disallow: /sidewiki/entry/
+Disallow: /quality_form?
+Disallow: /labs/popgadget/search
+Disallow: /buzz/post
+Disallow: /compressiontest/
+Disallow: /analytics/reporting/
+Disallow: /analytics/admin/
+Disallow: /analytics/web/
+Disallow: /analytics/feeds/
+Disallow: /analytics/settings/
+Disallow: /alerts/
+Disallow: /ads/preferences/
+Allow: /ads/preferences/html/
+Allow: /ads/preferences/plugin
+Disallow: /ads/search
+Disallow: /settings/ads/onweb/
+Disallow: /phone/compare/?
+Allow: /alerts/manage
+Allow: /alerts/remove
+Disallow: /travel/clk
+Disallow: /hotelfinder/rpc
+Disallow: /flights/rpc
+Disallow: /commercesearch/services/
+Disallow: /evaluation/
+Disallow: /chrome/browser/mobile/tour
+Disallow: /plus/history/tasks/
+Disallow: /compare/*/apply*
+Disallow: /forms/perks/
+Disallow: /baraza/*/search
+Disallow: /baraza/*/report
+Disallow: /now/topics/
+Sitemap: http://www.google.com/culturalinstitute/sitemap.xml
+Sitemap: http://www.google.com/hostednews/sitemap_index.xml
+Sitemap: http://www.google.com/sitemaps_webmasters.xml
+Sitemap: http://www.google.com/ventures/sitemap_ventures.xml
+Sitemap: http://www.gstatic.com/dictionary/static/sitemaps/sitemap_index.xml
+Sitemap: http://www.gstatic.com/earth/gallery/sitemaps/sitemap.xml
+Sitemap: http://www.gstatic.com/s2/sitemaps/profiles-sitemap.xml
+Sitemap: http://www.gstatic.com/trends/websites/sitemaps/sitemapindex.xml
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/
+Date: 
+Position: 2412
+DocId: 1
+
+HTTP/1.0 200 OK
+Date: Wed, 02 Jan 2013 04:45:38 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+Set-Cookie: PREF=ID=7a0293474719b187:FF=0:TM=1357101938:LM=1357101938:S=BmIW17rd_rfpvrIP; expires=Fri, 02-Jan-2015 04:45:38 GMT; path=/; domain=.google.com
+Set-Cookie: NID=67=YWAiwb8MQt9G2jYD0xSC5Yz2DXdI8Ytur8sYZFb1ZfZv-EDFPTDyU5qBo0UL_-mAu89gZnWT4w9uh66cnZhVRBfy8XBRVLMElrnolXxFplSJ6smy-eLw0sHqNfewMD5x; expires=Thu, 04-Jul-2013 04:45:38 GMT; path=/; domain=.google.com; HttpOnly
+P3P: CP="This is not a P3P policy! See http://www.google.com/support/accounts/bin/answer.py?hl=en&answer=151657 for more info."
+Server: gws
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+
+Google#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}.h{font-family:arial,sans-serif}body{font-family:arial,sans-serif}td{font-family:arial,sans-serif}a{font-family:arial,sans-serif}p{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}.h{color:#36c}.q{color:#00c}.ts{border-collapse:collapse}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.ts td{padding:0}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px;font:18px arial,sans-serif}.gsfi{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display: inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:black}a.gb1{color:#11c !important}a.gb2{color:#11c !important}a.gb3{color:#11c !important}a.gb4{color:#11c !important}.sblc{padding-top:5px}.lsbb{background:#eee;border:solid 1px;border-color:#ccc #999 #999 #ccc;height:30px}a{color:#11c;text-decoration:none}a:hover{text-decoration:underline}a:active{text-decoration:underline}.fl a{color:#36c}a:visited{color:#551a8b}a.gb1{text-decoration:underline}a.gb4{text-decoration:underline}a.gb3:hover{text-decoration:none}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}#ghead a.gb2:hover{color:#fff !important}.lsbb{display:block}.ftl{display:inline-block;margin:0 12px}.lsb{background:url(/images/srpr/nav_logo80.png) 0 -258px repeat-x;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}#fll a{display:inline-block;margin:0 12px}.lsb:active{background:#ccc}.lst:focus{outline:none}#addlang a{padding:0 3px} Search Images Maps Play YouTube News Gmail Drive More »Web History | Settings | Sign in Advanced searchLanguage toolsWhat a year. Watch and remember the biggest moments of 2012.Advertising ProgramsBusiness Solutions+GoogleAbout Google© 2012 - Privacy & Terms
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/imghp?hl=en&tab=wi
+Date: 
+Position: 9064
+DocId: 2
+
+HTTP/1.0 200 OK
+Date: Wed, 02 Jan 2013 04:45:47 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+Set-Cookie: PREF=ID=e17a8d680c570e42:FF=0:TM=1357101947:LM=1357101947:S=oUzYXXC5HqWDkKqq; expires=Fri, 02-Jan-2015 04:45:47 GMT; path=/; domain=.google.com
+Set-Cookie: NID=67=t86grUtSAp_T_7hKb2IYT8ytnIP3Am_rKUwk4xJLFL8ivoAdhsQtGdngbwJ0aZ4jN0LHKF9wk5ougu_7DInKDQSwBRLce3F6ryAQTUG1ho91ROK28fOSIKqDbb5VrRx8; expires=Thu, 04-Jul-2013 04:45:47 GMT; path=/; domain=.google.com; HttpOnly
+P3P: CP="This is not a P3P policy! See http://www.google.com/support/accounts/bin/answer.py?hl=en&answer=151657 for more info."
+Server: gws
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+
+Google Images#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}.h{font-family:arial,sans-serif}body{font-family:arial,sans-serif}td{font-family:arial,sans-serif}a{font-family:arial,sans-serif}p{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}.h{color:#36c}.q{color:#00c}.ts{border-collapse:collapse}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.ts td{padding:0}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px;font:18px arial,sans-serif}.gsfi{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display: inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:black}a.gb1{color:#11c !important}a.gb2{color:#11c !important}a.gb3{color:#11c !important}a.gb4{color:#11c !important}.sblc{padding-top:5px}.lsbb{background:#eee;border:solid 1px;border-color:#ccc #999 #999 #ccc;height:30px}a{color:#11c;text-decoration:none}a:hover{text-decoration:underline}a:active{text-decoration:underline}.fl a{color:#36c}a:visited{color:#551a8b}a.gb1{text-decoration:underline}a.gb4{text-decoration:underline}a.gb3:hover{text-decoration:none}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}#ghead a.gb2:hover{color:#fff !important}.lsbb{display:block}.ftl{display:inline-block;margin:0 12px}.lsb{background:url(/images/srpr/nav_logo80.png) 0 -258px repeat-x;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}#fll a{display:inline-block;margin:0 12px}.lsb:active{background:#ccc}.lst:focus{outline:none}#addlang a{padding:0 3px}.prms{color:#c00;font-size:13px}.sshppd{font-size:13px;margin:32px 0 26px}.sshpplt{margin:15px 0 30px}.sshpplo span{color:#c00} Search Images Maps Play YouTube News Gmail Drive More »Web History | Settings | Sign in  Advanced Image SearchWhat a year. Watch and remember the biggest moments of 2012.Advertising ProgramsBusiness Solutions+GoogleAbout Google© 2012
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/intl/en/options/
+Date: 
+Position: 15370
+DocId: 3
+
+HTTP/1.0 301 Moved Permanently
+Location: http://www.google.com/intl/en/about/products/
+Content-Type: text/html; charset=UTF-8
+X-Content-Type-Options: nosniff
+Date: Fri, 14 Dec 2012 22:33:39 GMT
+Expires: Sun, 13 Jan 2013 22:33:39 GMT
+Server: sffe
+Content-Length: 242
+X-XSS-Protection: 1; mode=block
+Cache-Control: public, max-age=2592000
+Age: 1577537
+
+
+301 Moved
+301 Moved
+The document has moved
+here.
+
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/history/optout?hl=en
+Date: 
+Position: 16201
+DocId: 4
+
+HTTP/1.0 302 Found
+Location: https://history.google.com/history/optout?hl=en
+Cache-Control: private
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: PREF=ID=38578c59558527cf:TM=1357101965:LM=1357101965:S=2kJgO8MndGzM4w3l; expires=Fri, 02-Jan-2015 04:46:05 GMT; path=/; domain=.google.com
+X-Content-Type-Options: nosniff
+Date: Wed, 02 Jan 2013 04:46:05 GMT
+Server: Search-History HTTP Server
+Content-Length: 244
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+
+
+302 Moved
+302 Moved
+The document has moved
+here.
+
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/advanced_search?hl=en&authuser=0
+Date: 
+Position: 17230
+DocId: 5
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=ISO-8859-1
+Date: Wed, 02 Jan 2013 04:46:14 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Set-Cookie: PREF=ID=1263de16f7d31ce6:FF=0:TM=1357101974:LM=1357101974:S=eOMwLclrLQNgvFws; expires=Fri, 02-Jan-2015 04:46:14 GMT; path=/; domain=.google.com
+Set-Cookie: NID=67=NFkyXpsrKReuv8wMyIIhAR-25R88GoVOkKf-eBw2yg781cLQoe-qayuR77xVM6i7RH4PbWsT55MHcW-Waq7qHrQ2fzEv0pWciJj40v-KXO7wz4vAtPZW3eMolHqDEZWy; expires=Thu, 04-Jul-2013 04:46:14 GMT; path=/; domain=.google.com; HttpOnly
+P3P: CP="This is not a P3P policy! See http://www.google.com/support/accounts/bin/answer.py?hl=en&answer=151657 for more info."
+Server: gws
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+
+  .goog-inline-block{position:relative;display:-moz-inline-box;display:inline-block}* html .goog-inline-block{display:inline}*:first-child+html .goog-inline-block{display:inline}.jfk-button{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;cursor:default;font-size:11px;font-weight:bold;text-align:center;white-space:nowrap;margin-right:16px;height:27px;line-height:27px;min-width:54px;outline:0;padding:0 8px}.jfk-button-hover{-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);-moz-box-shadow:0 1px 1px rgba(0,0,0,.1);box-shadow:0 1px 1px rgba(0,0,0,.1)}.jfk-button-selected{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1)}.jfk-button .jfk-button-img{margin-top:-3px;vertical-align:middle}.jfk-button-label{margin-left:5px}.jfk-button-narrow{min-width:34px;padding:0}.jfk-button-collapse-left,.jfk-button-collapse-right{z-index:1}.jfk-button-collapse-left.jfk-button-disabled{z-index:0}.jfk-button-checked.jfk-button-collapse-left,.jfk-button-checked.jfk-button-collapse-right{z-index:2}.jfk-button-collapse-left:focus,.jfk-button-collapse-right:focus,.jfk-button-hover.jfk-button-collapse-left,.jfk-button-hover.jfk-button-collapse-right{z-index:3}.jfk-button-collapse-left{margin-left:-1px;-moz-border-radius-bottomleft:0;-moz-border-radius-topleft:0;-webkit-border-bottom-left-radius:0;-webkit-border-top-left-radius:0;border-bottom-left-radius:0;border-top-left-radius:0}.jfk-button-collapse-right{margin-right:0;-moz-border-radius-topright:0;-moz-border-radius-bottomright:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-right-radius:0;border-top-right-radius:0;border-bottom-right-radius:0}.jfk-button.jfk-button-disabled:active{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.jfk-button-action{background-color:#4d90fe;background-image:-webkit-linear-gradient(top,#4d90fe,#4787ed);background-image:-moz-linear-gradient(top,#4d90fe,#4787ed);background-image:-ms-linear-gradient(top,#4d90fe,#4787ed);background-image:-o-linear-gradient(top,#4d90fe,#4787ed);background-image:linear-gradient(top,#4d90fe,#4787ed);border:1px solid #3079ed;color:#fff}.jfk-button-action.jfk-button-hover{background-color:#357ae8;background-image:-webkit-linear-gradient(top,#4d90fe,#357ae8);background-image:-moz-linear-gradient(top,#4d90fe,#357ae8);background-image:-ms-linear-gradient(top,#4d90fe,#357ae8);background-image:-o-linear-gradient(top,#4d90fe,#357ae8);background-image:linear-gradient(top,#4d90fe,#357ae8);border:1px solid #2f5bb7}.jfk-button-action:focus{-webkit-box-shadow:inset 0 0 0 1px #fff;-moz-box-shadow:inset 0 0 0 1px #fff;box-shadow:inset 0 0 0 1px #fff;border:1px solid #fff;border:1px solid rgba(0,0,0,0);outline:1px solid #4d90fe;outline:0 rgba(0,0,0,0)}.jfk-button-action.jfk-button-clear-outline{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.jfk-button-action:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3)}.jfk-button-action.jfk-button-disabled{background:#4d90fe;filter:alpha(opacity=50);opacity:.5}.jfk-button-default{background-color:#3d9400;background-image:-webkit-linear-gradient(top,#3d9400,#398a00);background-image:-moz-linear-gradient(top,#3d9400,#398a00);background-image:-ms-linear-gradient(top,#3d9400,#398a00);background-image:-o-linear-gradient(top,#3d9400,#398a00);background-image:linear-gradient(top,#3d9400,#398a00);border:1px solid #29691d;color:#fff;text-shadow:0 1px rgba(0,0,0,0.1)}.jfk-button-default.jfk-button-hover{background-color:#368200;background-image:-webkit-linear-gradient(top,#3d9400,#368200);background-image:-moz-linear-gradient(top,#3d9400,#368200);background-image:-ms-linear-gradient(top,#3d9400,#368200);background-image:-o-linear-gradient(top,#3d9400,#368200);background-image:linear-gradient(top,#3d9400,#368200);border:1px solid #2d6200;text-shadow:0 1px rgba(0,0,0,0.3)}.jfk-button-default:focus{-webkit-box-shadow:inset 0 0 0 1px #fff;-moz-box-shadow:inset 0 0 0 1px #fff;box-shadow:inset 0 0 0 1px #fff;border:1px solid #fff;border:1px solid rgba(0,0,0,0);outline:1px solid #3d9400;outline:0 rgba(0,0,0,0)}.jfk-button-default.jfk-button-clear-outline{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.jfk-button-default:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3)}.jfk-button-default.jfk-button-disabled{background:#3d9400;filter:alpha(opacity=50);opacity:.5}.jfk-button-primary{background-color:#d14836;background-image:-webkit-linear-gradient(top,#dd4b39,#d14836);background-image:-moz-linear-gradient(top,#dd4b39,#d14836);background-image:-ms-linear-gradient(top,#dd4b39,#d14836);background-image:-o-linear-gradient(top,#dd4b39,#d14836);background-image:linear-gradient(top,#dd4b39,#d14836);border:1px solid transparent;color:#fff;text-shadow:0 1px rgba(0,0,0,0.1);text-transform:uppercase}.jfk-button-primary.jfk-button-hover{-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.2);-moz-box-shadow:0 1px 1px rgba(0,0,0,0.2);box-shadow:0 1px 1px rgba(0,0,0,0.2);background-color:#c53727;background-image:-webkit-linear-gradient(top,#dd4b39,#c53727);background-image:-moz-linear-gradient(top,#dd4b39,#c53727);background-image:-ms-linear-gradient(top,#dd4b39,#c53727);background-image:-o-linear-gradient(top,#dd4b39,#c53727);background-image:linear-gradient(top,#dd4b39,#c53727);border:1px solid #b0281a;border-bottom-color:#af301f}.jfk-button-primary:focus{-webkit-box-shadow:inset 0 0 0 1px #fff;-moz-box-shadow:inset 0 0 0 1px #fff;box-shadow:inset 0 0 0 1px #fff;border:1px solid #fff;border:1px solid rgba(0,0,0,0);outline:1px solid #d14836;outline:0 rgba(0,0,0,0)}.jfk-button-primary.jfk-button-clear-outline{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.jfk-button-primary:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);background-color:#b0281a;background-image:-webkit-linear-gradient(top,#dd4b39,#b0281a);background-image:-moz-linear-gradient(top,#dd4b39,#b0281a);background-image:-ms-linear-gradient(top,#dd4b39,#b0281a);background-image:-o-linear-gradient(top,#dd4b39,#b0281a);background-image:linear-gradient(top,#dd4b39,#b0281a);border:1px solid #992a1b}.jfk-button-primary.jfk-button-disabled{background:#d14836;filter:alpha(opacity=50);opacity:.5}.jfk-slideToggle{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-box-shadow:inset 0 1px 2px 0 rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px 0 rgba(0,0,0,.1);box-shadow:inset 0 1px 2px 0 rgba(0,0,0,.1);background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border:1px solid #ccc;color:#666;font-weight:bold;height:27px;line-height:27px;margin-right:16px;outline:none;overflow:hidden;padding:0;position:relative;width:94px}.jfk-slideToggle-on,.jfk-slideToggle-off,.jfk-slideToggle-thumb{display:inline-block;text-align:center;text-transform:uppercase;width:47px}.jfk-slideToggle-on{-webkit-box-shadow:inset 0 1px 2px 0 rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px 0 rgba(0,0,0,.1);box-shadow:inset 0 1px 2px 0 rgba(0,0,0,.1);background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#3b93ff,#3689ee);background-image:-moz-linear-gradient(top,#3b93ff,#3689ee);background-image:-ms-linear-gradient(top,#3b93ff,#3689ee);background-image:-o-linear-gradient(top,#3b93ff,#3689ee);background-image:linear-gradient(top,#3b93ff,#3689ee);color:#fff;height:27px}.jfk-slideToggle-off{-webkit-border-radius:2px 2px 0 0;-moz-border-radius:2px 2px 0 0;border-radius:2px 2px 0 0}.jfk-slideToggle-thumb{-webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,.1);-moz-box-shadow:0 1px 2px 0 rgba(0,0,0,.1);box-shadow:0 1px 2px 0 rgba(0,0,0,.1);background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);-webkit-transition:all .13s ease-out;-moz-transition:all .13s ease-out;-o-transition:all .13s ease-out;transition:all .13s ease-out;border:1px solid #ccc;display:block;height:27px;left:-1px;position:absolute;top:-1px}.jfk-slideToggle-thumb::after{content:'';background-image:-webkit-linear-gradient(left,#ccc 50%,transparent 50%),-webkit-linear-gradient(left,#ccc 50%,transparent 50%),-webkit-linear-gradient(left,#ccc 50%,transparent 50%),-webkit-linear-gradient(left,#ccc 50%,transparent 50%),-webkit-linear-gradient(left,#ccc 50%,transparent 50%);background-image:-moz-linear-gradient(left,#ccc 50%,transparent 50%),-moz-linear-gradient(left,#ccc 50%,transparent 50%),-moz-linear-gradient(left,#ccc 50%,transparent 50%),-moz-linear-gradient(left,#ccc 50%,transparent 50%),-moz-linear-gradient(left,#ccc 50%,transparent 50%);background-image:-ms-linear-gradient(left,#ccc 50%,transparent 50%),-ms-linear-gradient(left,#ccc 50%,transparent 50%),-ms-linear-gradient(left,#ccc 50%,transparent 50%),-ms-linear-gradient(left,#ccc 50%,transparent 50%),-ms-linear-gradient(left,#ccc 50%,transparent 50%);background-image:-o-linear-gradient(left,#ccc 50%,transparent 50%),-o-linear-gradient(left,#ccc 50%,transparent 50%),-o-linear-gradient(left,#ccc 50%,transparent 50%),-o-linear-gradient(left,#ccc 50%,transparent 50%),-o-linear-gradient(left,#ccc 50%,transparent 50%);background-image:linear-gradient(left,#ccc 50%,transparent 50%),linear-gradient(left,#ccc 50%,transparent 50%),linear-gradient(left,#ccc 50%,transparent 50%),linear-gradient(left,#ccc 50%,transparent 50%),linear-gradient(left,#ccc 50%,transparent 50%);background-position:0 0,0 2px,0 4px,0 6px,0 8px;background-repeat:repeat-x;background-size:2px 1px;display:block;height:9px;left:15px;position:absolute;top:9px;width:17px}.jfk-slideToggle.jfk-slideToggle-checked .jfk-slideToggle-thumb{left:47px}.jfk-slideToggle:focus{border:1px solid #4d90fe}.jfk-button-standard{background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);color:#444;border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1)}.jfk-button-standard.jfk-button-hover,.jfk-button-standard.jfk-button-clear-outline.jfk-button-hover{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #c6c6c6;color:#333}.jfk-button-standard:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.jfk-button-standard.jfk-button-selected,.jfk-button-standard.jfk-button-clear-outline.jfk-button-selected{background-color:#eee;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #ccc;color:#333}.jfk-button-standard.jfk-button-checked,.jfk-button-standard.jfk-button-clear-outline.jfk-button-checked{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#eee;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border:1px solid #ccc;color:#333}.jfk-button-standard:focus{border:1px solid #4d90fe}.jfk-button-standard.jfk-button-clear-outline{border:1px solid #dcdcdc}.jfk-button-standard.jfk-button-disabled{background:#fff;border:1px solid #f3f3f3;border:1px solid rgba(0,0,0,0.05);color:#b8b8b8}.jfk-button-standard .jfk-button-img{opacity:.55}.jfk-button-standard.jfk-button-checked .jfk-button-img,.jfk-button-standard.jfk-button-selected .jfk-button-img,.jfk-button-standard.jfk-button-hover .jfk-button-img{opacity:.9}.jfk-button-standard.jfk-button-disabled .jfk-button-img{filter:alpha(opacity=33);opacity:.333}.jfk-button-flat{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;border:1px solid transparent;font-size:13px;font-weight:normal;height:21px;line-height:21px;margin-right:1px;min-width:0;padding:0}.jfk-button-flat.jfk-button-hover,.jfk-button-flat.jfk-button-selected,.jfk-button-flat:focus,.jfk-button-flat:active{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.jfk-button-flat .jfk-button-img{height:21px;opacity:.55;width:21px}.jfk-button-flat .jfk-button-label{display:inline-block;margin:0;padding:0 1px}.jfk-button-flat.jfk-button-selected .jfk-button-img,.jfk-button-flat.jfk-button-hover .jfk-button-img{opacity:.9}.jfk-button-flat.jfk-button-disabled .jfk-button-img{filter:alpha(opacity=33);opacity:.333}.jfk-button-flat:focus{border:1px solid #4d90fe}.jfk-button-flat.jfk-button-clear-outline{border:1px solid transparent}.jfk-button-mini{background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1);color:#444;height:17px;line-height:17px;min-width:22px;text-shadow:0 1px rgba(0,0,0,0.1)}.jfk-button-mini.jfk-button-hover,.jfk-button-mini.jfk-button-clear-outline.jfk-button-hover{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #c6c6c6;text-shadow:0 1px rgba(0,0,0,0.3)}.jfk-button-mini:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.jfk-button-mini.jfk-button-checked,.jfk-button-mini.jfk-button-clear-outline.jfk-button-checked{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#e0e0e0;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border:1px solid #ccc;color:#333}.jfk-button-mini:focus{border:1px solid #4d90fe}.jfk-button-mini.jfk-button-clear-outline{border:1px solid #dcdcdc}.jfk-button-mini.jfk-button-disabled{background:#fff;border:1px solid #f3f3f3;border:1px solid rgba(0,0,0,0.05);color:#b8b8b8}.jfk-colormenu.goog-menu{padding:0}.jfk-palette{cursor:default;outline:none}.jfk-palette-table{empty-cells:show;margin:16px}.jfk-palette-cell{border:1px solid transparent;cursor:pointer;margin:0;position:relative}.jfk-palette-cell-hover{border:1px solid #000}.jfk-palette-cell-selected{outline:1px solid #000}.jfk-palette-colorswatch{height:16px;width:16px}.jfk-palette-cell-selected>.jfk-palette-colorswatch{background:url(//ssl.gstatic.com/ui/v1/colorpicker/checkmark.png) no-repeat 50% 50%}.jfk-colorwell{border:1px solid #d9d9d9}.goog-menu{-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-transition:opacity .218s;-moz-transition:opacity .218s;-o-transition:opacity .218s;transition:opacity .218s;background:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);cursor:default;font-size:13px;margin:0;outline:none;padding:6px 0;position:absolute}.goog-flat-menu-button{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);border:1px solid #dcdcdc;color:#444;cursor:default;font-size:11px;font-weight:bold;line-height:27px;list-style:none;margin:0 2px;min-width:46px;outline:none;padding:0 18px 0 6px;text-align:center;text-decoration:none;vertical-align:middle}.goog-flat-menu-button-disabled{background-color:#fff;border-color:#f3f3f3;color:#b8b8b8}.goog-flat-menu-button.goog-flat-menu-button-hover{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);-moz-box-shadow:0 1px 1px rgba(0,0,0,.1);box-shadow:0 1px 1px rgba(0,0,0,.1);border-color:#c6c6c6;color:#333}.goog-flat-menu-button.goog-flat-menu-button-focused{border-color:#4d90fe}.goog-flat-menu-button.goog-flat-menu-button-open,.goog-flat-menu-button.goog-flat-menu-button-active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#eee;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border:1px solid #ccc;color:#333;z-index:2}.goog-flat-menu-button-caption{vertical-align:top;white-space:nowrap}.goog-flat-menu-button-dropdown{border-color:#777 transparent;border-style:solid;border-width:4px 4px 0;height:0;width:0;position:absolute;right:5px;top:12px}.goog-flat-menu-button .goog-flat-menu-button-img{margin-top:-3px;opacity:.55;vertical-align:middle}.goog-flat-menu-button-active .goog-flat-menu-button-img,.goog-flat-menu-button-open .goog-flat-menu-button-img,.goog-flat-menu-button-selected .goog-flat-menu-button-img,.goog-flat-menu-button-hover .goog-flat-menu-button-img{opacity:.9}.goog-flat-menu-button-active .goog-flat-menu-button-dropdown,.goog-flat-menu-button-open .goog-flat-menu-button-dropdown,.goog-flat-menu-button-selected .goog-flat-menu-button-dropdown,.goog-flat-menu-button-hover .goog-flat-menu-button-dropdown{border-color:#595959 transparent}.goog-flat-menu-button-left,.goog-flat-menu-button-right{z-index:1}.goog-flat-menu-button-left.goog-flat-menu-button-disabled{z-index:0}.goog-flat-menu-button-right:focus,.goog-flat-menu-button-hover.goog-flat-menu-button-collapse-right{z-index:2}.goog-flat-menu-button-left:focus,.goog-flat-menu-button-hover.goog-flat-menu-button-collapse-left{z-index:2}.goog-flat-menu-button-collapse-left{margin-left:-1px;-moz-border-radius-bottomleft:0;-moz-border-radius-topleft:0;-webkit-border-bottom-left-radius:0;-webkit-border-top-left-radius:0;border-bottom-left-radius:0;border-top-left-radius:0;min-width:0;padding-left:0;vertical-align:top}.goog-flat-menu-button-collapse-right{margin-right:0;-moz-border-radius-topright:0;-moz-border-radius-bottomright:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-right-radius:0;border-top-right-radius:0;border-bottom-right-radius:0}.goog-menuitem,.goog-tristatemenuitem,.goog-filterobsmenuitem{position:relative;color:#333;cursor:pointer;list-style:none;margin:0;padding:6px 7em 6px 30px;white-space:nowrap}.goog-menu-nocheckbox .goog-menuitem,.goog-menu-noicon .goog-menuitem{padding-left:16px;vertical-align:middle}.goog-menu-noaccel .goog-menuitem{padding-right:44px}.goog-menuitem-disabled{cursor:default}.goog-menuitem-disabled .goog-menuitem-accel,.goog-menuitem-disabled .goog-menuitem-content{color:#ccc!important}.goog-menuitem-disabled .goog-menuitem-icon{filter:alpha(opacity=30);opacity:.3}.goog-menuitem-highlight,.goog-menuitem-hover{background-color:#eee;border-color:#eee;border-style:dotted;border-width:1px 0;padding-top:5px;padding-bottom:5px}.goog-menuitem-highlight .goog-menuitem-content,.goog-menuitem-hover .goog-menuitem-content{color:#333}.goog-menuitem-checkbox,.goog-menuitem-icon{background-repeat:no-repeat;height:21px;left:3px;position:absolute;right:auto;top:3px;vertical-align:middle;width:21px}.goog-option-selected{background-image:url(//ssl.gstatic.com/ui/v1/menu/checkmark.png);background-repeat:no-repeat;background-position:left center}.goog-option-selected .goog-menuitem-content,.goog-option-selected .goog-menuitem-content{color:#333}.goog-menuitem-accel{color:#777;direction:ltr;left:auto;padding:0 6px;position:absolute;right:0;text-align:right}.goog-menuitem-mnemonic-hint{text-decoration:underline}.goog-menuitem-mnemonic-separator{color:#777;font-size:12px;padding-left:4px}.goog-slider{position:relative;outline:0}.goog-slider-horizontal{height:18px}.goog-slider-vertical{width:18px}.goog-slider-thumb{background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-transition:background-color .218s,border-color .218s,background-image .218s;-moz-transition:background-color .218s,border-color .218s,background-image .218s;-o-transition:background-color .218s,border-color .218s,background-image .218s;transition:background-color .218s,border-color .218s,background-image .218s;border:1px solid #dcdcdc;height:16px;position:absolute;width:16px}.goog-slider-thumb:hover{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border-color:#c6c6c6}.goog-slider-scale{position:absolute}.goog-slider-horizontal .goog-slider-scale{border-top:1px solid #ccc;top:8px;width:100%}.goog-slider-vertical .goog-slider-scale{border-left:1px solid #ccc;height:100%;left:8px}.jfk-textinput{-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;height:25px;padding:1px 8px}.jfk-textinput:focus{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);border:1px solid #4d90fe;outline:none}.jfk-textinput::-ms-clear{display:none}.jfk-scrollbar::-webkit-scrollbar{height:16px;overflow:visible;width:16px}.jfk-scrollbar::-webkit-scrollbar-button{height:0;width:0}.jfk-scrollbar::-webkit-scrollbar-track{background-clip:padding-box;border:solid transparent;border-width:0 0 0 4px}.jfk-scrollbar::-webkit-scrollbar-track:horizontal{border-width:4px 0 0}.jfk-scrollbar::-webkit-scrollbar-track:hover{background-color:rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(0,0,0,.1)}.jfk-scrollbar::-webkit-scrollbar-track:horizontal:hover{box-shadow:inset 0 1px 0 rgba(0,0,0,.1)}.jfk-scrollbar::-webkit-scrollbar-track:active{background-color:rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(0,0,0,.14),inset -1px 0 0 rgba(0,0,0,.07)}.jfk-scrollbar::-webkit-scrollbar-track:horizontal:active{box-shadow:inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-track:hover{background-color:rgba(255,255,255,.1);box-shadow:inset 1px 0 0 rgba(255,255,255,.2)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-track:horizontal:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-track:active{background-color:rgba(255,255,255,.1);box-shadow:inset 1px 0 0 rgba(255,255,255,.25),inset -1px 0 0 rgba(255,255,255,.15)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-track:horizontal:active{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),inset 0 -1px 0 rgba(255,255,255,.15)}.jfk-scrollbar::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,.2);background-clip:padding-box;border:solid transparent;border-width:1px 1px 1px 6px;min-height:28px;padding:100px 0 0;box-shadow:inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07)}.jfk-scrollbar::-webkit-scrollbar-thumb:horizontal{border-width:6px 1px 1px;padding:0 0 0 100px;box-shadow:inset 1px 1px 0 rgba(0,0,0,.1),inset -1px 0 0 rgba(0,0,0,.07)}.jfk-scrollbar::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.4);box-shadow:inset 1px 1px 1px rgba(0,0,0,.25)}.jfk-scrollbar::-webkit-scrollbar-thumb:active{background-color:rgba(0,0,0,0.5);box-shadow:inset 1px 1px 3px rgba(0,0,0,0.35)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-thumb{background-color:rgba(255,255,255,.3);box-shadow:inset 1px 1px 0 rgba(255,255,255,.15),inset 0 -1px 0 rgba(255,255,255,.1)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-thumb:horizontal{box-shadow:inset 1px 1px 0 rgba(255,255,255,.15),inset -1px 0 0 rgba(255,255,255,.1)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-thumb:hover{background-color:rgba(255,255,255,.6);box-shadow:inset 1px 1px 1px rgba(255,255,255,.37)}.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-thumb:active{background-color:rgba(255,255,255,.75);box-shadow:inset 1px 1px 3px rgba(255,255,255,.5)}.jfk-scrollbar-borderless.jfk-scrollbar::-webkit-scrollbar-track{border-width:0 1px 0 6px}.jfk-scrollbar-borderless.jfk-scrollbar::-webkit-scrollbar-track:horizontal{border-width:6px 0 1px}.jfk-scrollbar-borderless.jfk-scrollbar::-webkit-scrollbar-track:hover{background-color:rgba(0,0,0,.035);box-shadow:inset 1px 1px 0 rgba(0,0,0,.14),inset -1px -1px 0 rgba(0,0,0,.07)}.jfk-scrollbar-borderless.jfk-scrollbar-dark.jfk-scrollbar::-webkit-scrollbar-track:hover{background-color:rgba(255,255,255,.07);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),inset -1px -1px 0 rgba(255,255,255,.15)}.jfk-scrollbar-borderless.jfk-scrollbar::-webkit-scrollbar-thumb{border-width:0 1px 0 6px}.jfk-scrollbar-borderless.jfk-scrollbar::-webkit-scrollbar-thumb:horizontal{border-width:6px 0 1px}.jfk-scrollbar::-webkit-scrollbar-corner{background:transparent}body.jfk-scrollbar::-webkit-scrollbar-track-piece{background-clip:padding-box;background-color:#f5f5f5;border:solid #fff;border-width:0 0 0 3px;box-shadow:inset 1px 0 0 rgba(0,0,0,.14),inset -1px 0 0 rgba(0,0,0,.07)}body.jfk-scrollbar::-webkit-scrollbar-track-piece:horizontal{border-width:3px 0 0;box-shadow:inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07)}body.jfk-scrollbar::-webkit-scrollbar-thumb{border-width:1px 1px 1px 5px}body.jfk-scrollbar::-webkit-scrollbar-thumb:horizontal{border-width:5px 1px 1px}body.jfk-scrollbar::-webkit-scrollbar-corner{background-clip:padding-box;background-color:#f5f5f5;border:solid #fff;border-width:3px 0 0 3px;box-shadow:inset 1px 1px 0 rgba(0,0,0,.14)}.jfk-radiobutton{display:inline-block;outline:none;padding:5px 7px;position:relative}.jfk-radiobutton-radio{-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background:url(//ssl.gstatic.com/ui/v1/radiobutton/unchecked.png) -3px -3px;background:rgba(255,255,255,0);border:1px solid rgba(198,198,198,1);height:15px;left:7px;margin:0;outline:none;position:absolute;text-align:left;top:6px;width:15px}.jfk-radiobutton:active .jfk-radiobutton-radio{background:rgba(235,235,235,1);border-color:rgba(182,182,182,1)}.jfk-radiobutton:hover .jfk-radiobutton-radio{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,.1);box-shadow:inset 0 1px 1px rgba(0,0,0,.1);border-color:rgba(182,182,182,1)}.jfk-radiobutton:focus .jfk-radiobutton-radio{border-color:rgba(77,144,254,1)}.jfk-radiobutton-checked .jfk-radiobutton-radio{background:url(//ssl.gstatic.com/ui/v1/radiobutton/checked.png) -3px -3px;background:rgba(255,255,255,0)}.jfk-radiobutton.jfk-radiobutton:focus .jfk-radiobutton-radio{background:url(//ssl.gstatic.com/ui/v1/radiobutton/unchecked_focused.png) -3px -3px;background:rgba(255,255,255,0)}.jfk-radiobutton-checked.jfk-radiobutton:focus .jfk-radiobutton-radio{background:url(//ssl.gstatic.com/ui/v1/radiobutton/checked_focused.png) -3px -3px;background:rgba(255,255,255,0)}.jfk-radiobutton-checked .jfk-radiobutton-radio::after{-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;background:rgba(96,96,96,1);content:'';display:block;height:7px;left:3px;position:relative;top:3px;width:7px}.jfk-radiobutton .jfk-radiobutton-label{cursor:default;margin-left:22px}.jfk-radiobutton-disabled .jfk-radiobutton-radio{background:url(//ssl.gstatic.com/ui/v1/radiobutton/unchecked-disabled.png) -3px -3px;background:rgba(255,255,255,0);border-color:rgba(241,241,241,1)}.jfk-radiobutton-disabled.jfk-radiobutton-checked .jfk-radiobutton-radio{background:url(//ssl.gstatic.com/ui/v1/radiobutton/checked-disabled.png) -3px -3px;background:rgba(255,255,255,0)}.jfk-radiobutton-disabled.jfk-radiobutton-checked .jfk-radiobutton-radio::after{background:rgba(184,184,184,1)}.jfk-radiobutton-disabled .jfk-radiobutton-label{color:#b8b8b8}.jfk-radiobutton-disabled:active .jfk-radiobutton-radio,.jfk-radiobutton-disabled:hover .jfk-radiobutton-radio{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background:rgba(255,255,255,1);border-color:rgba(241,241,241,1)}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;font-family:"Arial","Helvetica",sans-serif;text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#12c}ol,ul{list-style:none}html,body{height:100%}.appbar{color:#dd4b39;font-size:20px;margin:25px 35px}.appbar_b{border-bottom:1px solid #ebebeb}.float-dir{float:left}.kd-arrow{background:url(//ssl.gstatic.com/ui/v1/zippy/arrow_down.png);background-position:right center;background-repeat:no-repeat;display:inline-block;float:right;height:4px;margin-right:8px;margin-top:12px;opacity:.667;vertical-align:middle;width:7px}.kd-button:hover>.kd-arrow{opacity:.9}.kd-menulist.stretch{width:100%}.stretch{padding:0;text-align:left;width:100%}.stretch span.label{padding-left:8px}div.input-outer{padding-right:16px}div.advsearch{max-width:1140px;min-width:200px;font-family:"Arial","Helvetica",sans-serif;width:96%;margin:40px 2% 0 45px}div.advtable{width:100%;clear:both}div.advtable div.advtable-row{clear:both}div.advtable div.cell-header-label,div.header-label{float:left;display:inline-block;min-width:167px;width:16%;font-size:16px;height:42px;font-weight:500;color:#333;vertical-align:middle}div.advtable div.cell-header-spacer{float:left;display:inline-block;min-width:167px;min-height:41px;vertical-align:middle;width:50%}div.advtable div.cell-header-comment{float:left;display:inline-block;width:33%;font-size:13px;font-weight:700;color:#777;padding-left:5px;vertical-align:middle}div.advtable div.cell-label{float:left;display:inline-block;min-width:167px;width:16%;height:42px;color:#222;font-size:13px;line-height:16px;vertical-align:middle}div.advtable div.cell-input{float:left;display:inline-block;min-width:167px;min-height:41px;vertical-align:middle;width:50%}div.advtable div.cell-example{float:left;display:inline-block;width:32%;min-width:160px;margin:0 0 8px 1%;color:#555;font-size:11px;padding-left:5px;vertical-align:middle;position:relative}div.advtable div.further-link{clear:both;font-size:13px;line-height:16px;height:20px;text-align:left}div.valign-text{height:30px;display:table-cell;vertical-align:middle}div.advtable div.cell-input input[type="text"],div.advtable div.cell-input span.options{width:100%;text-align:left}div.advtable div.cell-input select{width:100%;height:29px;font-weight:700;font-size:11px;background-color:#eee;line-height:27px;padding-left:4px;color:#333;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;display:inline-block;vertical-align:top;padding-left:2px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:1px}div.advtable div.cell-example span.queryterm{color:#666;font-family:monospace;font-size:11px;white-space:pre}div.splitter{margin:18px 0;clear:both;border-top:1px solid #ebebeb}input.adv-button{padding:0 12px}div.advtable div.advtable-row input.adv-button{float:right;margin:10px 0}@media (max-width:1056px){div.cell-header-comment{display:none!important}div.cell-query-example{display:none!important}div.cell-example{display:none!important}}div.bottom-wrapper{min-height:100%;height:auto!important;height:100%;margin:0 auto -60px}div.bottom-links-wrapper,div.push{height:60px}div.bottom-links-wrapper{position:relative;z-index:10;width:100%;background-color:white}div.bottom-links{width:100%;position:absolute;bottom:0;text-align:center}div.bottom-links a{margin:0 8px;font-size:13px;white-space:nowrap;line-height:30px;color:#12c}.advsearch-select{width:100%;margin:0;padding:0;text-align:left;text-indent:4px}.advsearch-menu{max-height:200px;z-index:12;overflow:auto}.slmarker{border-left:1px solid #d0d0d0;display:inline-block;height:9px;position:absolute;width:0;z-index:-1}.slruler{height:9px;margin:0;padding:0;position:absolute;top:4px;width:100%;z-index:-1}.goog-slider li{color:#343434;cursor:default;float:left;font-size:11px;font-weight:bold;line-height:17px;position:relative;text-align:left;top:20px}.goog-slider:focus .goog-slider-thumb{border:1px solid #4d90fe}.jfk-button-action:hover{background-color:#357ae8;background-image:-webkit-linear-gradient(top,#4d90fe,#357ae8);background-image:-moz-linear-gradient(top,#4d90fe,#357ae8);background-image:-ms-linear-gradient(top,#4d90fe,#357ae8);background-image:-o-linear-gradient(top,#4d90fe,#357ae8);background-image:linear-gradient(top,#4d90fe,#357ae8);border:1px solid #2f5bb7;border-image:initial}.jfk-radiobutton:focus{outline-width:0}.jfk-palette-cell-nonselected{border:1px solid rgba(0,0,0,0.2);margin-top:-1px;margin-right:-1px}.jfk-radiobutton-label{font-size:13px}.colorpicker-container{background-color:white;outline:1px solid rgba(0,0,0,0.2)}.jfk-radiobutton:focus .jfk-radiobutton-radio{border-color:rgba(77,144,254,1)}    Google Advanced Search   #gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}     Search Images Maps Play YouTube News Gmail Drive More »Web History | Settings | Sign in            Advanced Search               Find pages with...          To do this in the search box         all these words:            Type the important words:   tricolor rat terrier          this exact word or phrase:            Put exact words in quotes:   "rat terrier"          any of these words:            Type OR between all the words you want:   miniature OR standard          none of these words:            Put a minus sign just before words you don't want:   -rodent, -"Jack Russell"         numbers ranging from:         to        Put 2 periods between the numbers and add a unit of measure:  10..35 lb, $300..$500, 2010..2011         Then narrow your results by...       language:      any languageAfrikaansArabicArmenianBelarusianBulgarianCatalanChinese (Simplified)Chinese (Traditional)CroatianCzechDanishDutchEnglishEsperantoEstonianFilipinoFinnishFrenchGermanGreekHebrewHindiHungarianIcelandicIndonesianItalianJapaneseKoreanLatvianLithuanianNorwegianPersianPolishPortugueseRomanianRussianSerbianSlovakSlovenianSpanishSwahiliSwedishThaiTurkishUkrainianVietnamese      Find pages in the language you select.           region:      any regionAfghanistanAlbaniaAlgeriaAmerican SamoaAndorraAngolaAnguillaAntarcticaAntigua and BarbudaArgentinaArmeniaArubaAustraliaAustriaAzerbaijanBahamasBahrainBangladeshBarbadosBelarusBelgiumBelizeBeninBermudaBhutanBoliviaBosnia and HerzegovinaBotswanaBouvet IslandBrazilBritish Indian Ocean TerritoryBritish Virgin IslandsBruneiBulgariaBurkina FasoBurundiCambodiaCameroonCanadaCape VerdeCayman IslandsCentral African RepublicChadChileChinaChristmas IslandCocos [Keeling] IslandsColombiaComorosCongo [DRC]Congo [Republic]Cook IslandsCosta RicaC?te d?IvoireCroatiaCubaCyprusCzech RepublicDenmarkDjiboutiDominicaDominican RepublicEcuadorEgyptEl SalvadorEquatorial GuineaEritreaEstoniaEthiopiaFalkland Islands [Islas Malvinas]Faroe IslandsFijiFinlandFranceFrench GuianaFrench PolynesiaFrench Southern TerritoriesGabonGambiaGeorgiaGermanyGhanaGibraltarGreeceGreenlandGrenadaGuadeloupeGuamGuatemalaGuineaGuinea-BissauGuyanaHaitiHeard Island and McDonald IslandsHondurasHong KongHungaryIcelandIndiaIndonesiaIranIraqIrelandIsraelItalyJamaicaJapanJordanKazakhstanKenyaKiribatiKuwaitKyrgyzstanLaosLatviaLebanonLesothoLiberiaLibyaLiechtensteinLithuaniaLuxembourgMacauMacedonia [FYROM]MadagascarMalawiMalaysiaMaldivesMaliMaltaMarshall IslandsMartiniqueMauritaniaMauritiusMayotteMexicoMicronesiaMoldovaMonacoMongoliaMontserratMoroccoMozambiqueMyanmar [Burma]NamibiaNauruNepalNetherlandsNew CaledoniaNew ZealandNicaraguaNigerNigeriaNiueNorfolk IslandNorth KoreaNorthern Mariana IslandsNorwayOmanPakistanPalauPalestinian TerritoriesPanamaPapua New GuineaParaguayPeruPhilippinesPitcairn IslandsPolandPortugalPuerto RicoQatarR?unionRomaniaRussiaRwandaSaint HelenaSaint Kitts and NevisSaint LuciaSaint Pierre and MiquelonSaint Vincent and the GrenadinesSamoaSan MarinoS?o Tom? and Pr?ncipeSaudi ArabiaSenegalSerbiaSeychellesSierra LeoneSingaporeSlovakiaSloveniaSolomon IslandsSomaliaSouth AfricaSouth Georgia and the South Sandwich IslandsSouth KoreaSpainSri LankaSudanSurinameSvalbard and Jan MayenSwazilandSwedenSwitzerlandSyriaTaiwanTajikistanTanzaniaThailandTogoTokelauTongaTrinidad and TobagoTunisiaTurkeyTurkmenistanTurks and Caicos IslandsTuvaluU.S. Minor Outlying IslandsU.S. Virgin IslandsUgandaUkraineUnited Arab EmiratesUnited KingdomUnited StatesUruguayUzbekistanVanuatuVatican CityVenezuelaVietnamWallis and FutunaWestern SaharaYemenZambiaZimbabwe       Find pages published in a particular region.         last update:       anytimepast 24 hourspast weekpast monthpast year       Find pages updated within the time you specify.        site or domain:          Search one site (like   wikipedia.org    ) or limit your results to a domain like .edu, .org or .gov      terms appearing:      anywhere in the page in the title of the page in the text of the page in the URL of the page in links to the page      Search for terms in the whole page, page title, or web address, or links to the page you're looking for.       SafeSearch:          off    moderate    strict         Tell SafeSearch how much explicit sexual content to filter.        file type:       any format Adobe Acrobat PDF (.pdf) Adobe Postscript (.ps) Autodesk DWF (.dwf) Google Earth KML (.kml) Google Earth KMZ (.kmz) Microsoft Excel (.xls) Microsoft Powerpoint (.ppt) Microsoft Word (.doc) Rich Text Format (.rtf) Shockwave Flash (.swf)       Find pages in the format you prefer.       usage rights:     not filtered by license free to use or share free to use or share, even commercially free to use share or modify free to use, share or modify, even commercially      Find pages you are free to use yourself.                 You can also...Find pages that are similar to, or link to, a URLSearch pages you've visitedUse operators in the search boxCustomize your search settings      Google Homeâ€Ž Advertising Programsâ€Ž Business Solutionsâ€Ž Privacy & Termsâ€Ž About Googleâ€Ž     
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/language_tools?hl=en&authuser=0
+Date: 
+Position: 66325
+DocId: 6
+
+HTTP/1.0 301 Moved Permanently
+Location: http://translate.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 02 Jan 2013 04:46:23 GMT
+Expires: Fri, 01 Feb 2013 04:46:23 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 225
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+
+
+301 Moved
+301 Moved
+The document has moved
+here.
+
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/zeitgeist/2012/resolutions/
+Date: 
+Position: 67117
+DocId: 7
+
+HTTP/1.0 200 OK
+Vary: Accept-Encoding
+Content-Type: text/html
+Last-Modified: Mon, 31 Dec 2012 19:01:53 GMT
+Date: Wed, 02 Jan 2013 04:46:32 GMT
+Expires: Wed, 02 Jan 2013 04:46:32 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 1; mode=block
+
+
+
+  
+
+    
+    
+    
+    
+      Google Zeitgeist ??? Zeitgeist 2012 ??? Google
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            Zeitgeist 2012
+          
+          
+            
+              
+              
+              
+            
+          
+        
+      
+      
+        
+          
+          
+            View the 2012 Lists
+            
+              Resolutions
+              
+              Love
+              
+              Health
+              
+              Career
+              
+              Finance
+              
+              Family
+              
+              Education
+              
+              Do Good
+              
+              Other
+              
+              View All
+              
+            
+            
+              
+                Translate:
+              
+                
+                  Select a language
+                
+                
+                  ??????????????
+                
+                
+                  ??????????????????
+                
+                
+                  catal??
+                
+                
+                  ??e??tina
+                
+                
+                  dansk
+                
+                
+                  Deutsch
+                
+                
+                  ????????????????
+                
+                
+                  English
+                
+                
+                  espa??ol
+                
+                
+                  eesti
+                
+                
+                  ??????????
+                
+                
+                  suomi
+                
+                
+                  Filipino
+                
+                
+                  fran??ais
+                
+                
+                  ??????????????????
+                
+                
+                  hrvatski
+                
+                
+                  magyar
+                
+                
+                  Bahasa Indonesia
+                
+                
+                  italiano
+                
+                
+                  ??????????
+                
+                
+                  ?????????
+                
+                
+                  ?????????
+                
+                
+                  lietuvi??
+                
+                
+                  latvie??u
+                
+                
+                  Bahasa Melayu
+                
+                
+                  Nederlands
+                
+                
+                  norsk
+                
+                
+                  polski
+                
+                
+                  portugu??s
+                
+                
+                  rom??n??
+                
+                
+                  ??????????????
+                
+                
+                  sloven??ina
+                
+                
+                  sloven????ina
+                
+                
+                  ????????????
+                
+                
+                  svenska
+                
+                
+                  ?????????
+                
+                
+                  T??rk??e
+                
+                
+                  ????????????????????
+                
+                
+                  Ti???ng Vi???t
+                
+                
+                  ?????? (??????)
+                
+                
+                  ?????? (??????)
+                
+              
+            
+            
+              
+                
+              
+              
+                Watch the video
+              
+            
+          
+          
+            
+              
+                As you look back on 2012, let's look forward to 2013.
+              
+              
+              
+            
+          
+          
+            
+              
+              
+              
+                Add your 2013 resolution
+                to the map.
+               
+              Or see what other people said.
+            
+            
+              
+              
+              
+                Add your 2013 resolution to the map.
+              
+            
+            
+              
+              
+              
+                Share your 2013 resolution with the world.
+                In your native language, please tell us:
+              
+              
+                In box #1, tell the world your 2013 resolution
+                
+                In box #2, tell us your postal code
+                
+                In box #3, tell us your country name
+                
+              
+              
+                In the drop down menu, select which category your resolution is
+              
+              
+                
+                  Google Privacy
+                  Policy
+                
+                
+                  Your resolution will be shared with the world in 24-48 hours.
+                
+              
+            
+          
+          
+            
+              
+                
+                  
+                    
+                    
+                    
+                  
+                
+              
+            
+          
+          
+            All messages have been automatically translated by Google Translate.
+          
+        
+        
+          
+            
+            
+              View the Zeitgeist 2012 Lists
+              or scroll down to explore resolutions from around the world
+            
+          
+          
+            
+              Explore resolutions
+              
+              Submit your resolution
+              
+            
+          
+          
+          
+            
+              Share your 2013 resolution with the world.
+              In your native language, please tell us:
+            
+            
+              In box #1, tell the world your 2013 resolution
+              
+              In box #2, tell us your postal code
+              
+              In box #3, tell us your country name
+              
+            
+            
+              In the drop down menu, select which category your resolution is
+            
+            
+              
+                Google Privacy Policy
+              
+              
+                Your resolution will be shared with the world in 24-48 hours.
+              
+            
+          
+        
+      
+      
+      
+        
+          
+            
+              
+                
+                  ??????????????
+                
+                
+                  ??????????????????
+                
+                
+                  catal??
+                
+                
+                  ??e??tina
+                
+                
+                  dansk
+                
+                
+                  Deutsch
+                
+                
+                  ????????????????
+                
+                
+                  English
+                
+                
+                  English (United Kingdom)
+                
+                
+                  espa??ol
+                
+                
+                  espa??ol (Latinoam??rica)
+                
+                
+                  eesti
+                
+                
+                  ??????????
+                
+                
+                  suomi
+                
+                
+                  Filipino
+                
+                
+                  fran??ais
+                
+                
+                  ??????????????????
+                
+                
+                  hrvatski
+                
+                
+                  magyar
+                
+                
+                  Bahasa Indonesia
+                
+                
+                  italiano
+                
+                
+                  ??????????
+                
+                
+                  ?????????
+                
+                
+                  ?????????
+                
+                
+                  lietuvi??
+                
+                
+                  latvie??u
+                
+                
+                  Bahasa Melayu
+                
+                
+                  Nederlands
+                
+                
+                  norsk
+                
+                
+                  polski
+                
+                
+                  portugu??s (Brasil)
+                
+                
+                  portugu??s (Portugal)
+                
+                
+                  rom??n??
+                
+                
+                  ??????????????
+                
+                
+                  sloven??ina
+                
+                
+                  sloven????ina
+                
+                
+                  ????????????
+                
+                
+                  svenska
+                
+                
+                  ?????????
+                
+                
+                  T??rk??e
+                
+                
+                  ????????????????????
+                
+                
+                  Ti???ng Vi???t
+                
+                
+                  ?????? (??????)
+                
+                
+                  ?????? (??????)
+                
+              
+            
+            
+              
+                Google
+              
+              
+                About Google
+              
+              
+                Privacy & Terms
+              
+            
+          
+        
+      
+    
+  
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/intl/en/ads/
+Date: 
+Position: 74146
+DocId: 8
+
+HTTP/1.0 200 OK
+Vary: Accept-Encoding
+Content-Type: text/html
+Last-Modified: Fri, 07 Dec 2012 22:34:56 GMT
+Date: Wed, 02 Jan 2013 04:46:41 GMT
+Expires: Wed, 02 Jan 2013 04:46:41 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 1; mode=block
+
+
+
+  
+
+    
+    
+    
+    
+    
+      Google Ads
+    
+    
+    
+    
+    
+    
+    
+.gwebx-variation {display: none;}
+    .gwebx-variation.active {display: block;}
+    
+    
+  
+  
+    
+      
+        Looking to grow your business? We can help.
+      
+    
+    
+      
+        
+           Ads
+        
+      
+    
+    
+      
+        
+          
+            
+            
+              
+                AdWords doubled my website traffic
+              
+              
+                Sales at my shop are up another 10% this year. When you go online, you go Google.
+              
+            
+            
+              Romi, Owner ??? Romi Boutique
+            
+          
+          
+            
+              Advertise on Google
+            
+            
+              Those customers you are looking for, are looking for you ??? on Google.
+              
+              Learn more
+            
+            
+              
+              Get started Get started Get started Get started
+              Get started
+              
+                If you prefer, we'll set up your ad for you, free of charge.
+                Call us at 1 877 906-7957* or 
+                request a callback
+              
+            
+          
+        
+        
+          
+            
+            
+              
+                Simply put, Google doubled our revenue
+              
+              
+                AdSense is a major revenue driver for us. It's a high-volume channel of quality
+                ads. AdSense simply displays relevant ads on our website. Best of all, it's easy to
+                set up and get started.
+              
+            
+            
+              Bart and Zach, Co-founders ??? SideReel
+            
+          
+          
+            
+              Make money from your site
+            
+            
+              Show ads that relate to the content on your website.
+              
+              Learn more
+            Get
+            started
+          
+        
+      
+      
+        
+          
+            * Phone support in English available Monday-Friday, 9am-9pm ET. For new customers based
+            in the US or Canada only. Subject to website and business qualification.
+          
+        
+      
+    
+    
+    
+      
+        
+          
+            Looking to grow your business? We can help.
+          
+        
+       
+      
+        
+          
+            
+              Google
+            
+            
+              About Google
+            
+            
+              Privacy & Terms
+            
+          
+        
+      
+        
+  
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+URL: http://www.google.com/services/
+Date: 
+Position: 98306
+DocId: 9
+
+HTTP/1.0 200 OK
+Vary: Accept-Encoding
+Content-Type: text/html
+Last-Modified: Fri, 07 Dec 2012 22:34:56 GMT
+Date: Wed, 02 Jan 2013 04:46:50 GMT
+Expires: Wed, 02 Jan 2013 04:46:50 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 1; mode=block
+
+
+
+  
+
+    
+    
+    
+    
+    
+      Business Solutions ??? Google
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+iframe.c1 {display:none}
+    
+  
+  
+    
+      
+        
+          
+        
+        
+          Business Solutions
+        
+      
+    
+    
+      
+        
+          
+            
+              Get your business online
+            
+            
+              Google+ pages give your business a home online, and let you build relationships with
+              your customers.
+            Explore
+            Google+ pages
+          
+        
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        More ways to grow your business
+      
+      
+        
+          
+            Advertise on Google
+          
+          
+            Google AdWords helps you find new customers who are looking for what you have to
+            offer.
+          Learn
+          more
+          
+            
+              If you prefer, we'll set up your ad for you, free of charge.
+              Just call us at 1 877 906-7957* or 
+              request a callback.
+            
+          
+        
+        
+          
+            Improve how you work
+          
+          
+            Google Apps helps you be more productive from anywhere with online email, calendar, and
+            docs.
+          Learn
+          more
+        
+        
+          
+            Optimize your website
+          
+          
+            Google Analytics helps you learn about your website so you can make it more useful
+            for visitors.
+          Learn
+          more
+        
+      
+      
+        
+          
+            * Phone support in English available Monday-Friday, 9am-9pm ET. For new customers based
+            in the US or Canada only. Subject to website and business qualification.
+          
+        
+      
+    
+    
+    
+      
+        
+          
+            Looking to grow your business? We can help.
+          
+        
+      
+      
+        
+          
+            
+              Google
+            
+            
+              About Google
+            
+            
+              Privacy & Terms
+            
+          
+        
+      
+         
+  
+
+
+==P=>>>>=i===<<<<=T===>=A===<=!Junghoo!==>
+0

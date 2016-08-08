@@ -14,6 +14,7 @@ def read_content(html):
     #The function sub substitues any occurrence of the first parameter in the string given as third parameter with an occurrence of the second parameter
     #The first parameter here is given as a regular expression and consists of any html tag
     text = sub(r'<.*?>',' ',html)
+    text = sub(r'[,"\'{:;|}]|&amp|&nbsp|<!--|\.\.\.|--', '', text)
     return text.split()
 
 #This function removes from the given graph all the edges towards undefined pages
@@ -68,8 +69,18 @@ def read_wibbi(filename):
 
 
 graph,db = read_wibbi("06-2014-text.txt")
+out_file = open("test.txt","w")
+
 for i in graph.keys():
     print(i)
     #print(graph[i])
-    print(db[i])
+    print(db[i],"")
+    if (len(db[i]) != 0):
+        str = i +" "
+        for fons in db[i]:
+          str += fons+","
+
+        out_file.write(str[:-1]+"\n")
     #input()
+
+out_file.close()
