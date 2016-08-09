@@ -15,6 +15,10 @@ def read_content(html):
     #The first parameter here is given as a regular expression and consists of any html tag
     text = sub(r'<.*?>',' ',html)
     text = sub(r'[,"\'{:;|}]|&amp|&nbsp|<!--|\.\.\.|--', '', text)
+    stop_words = open("stopwords.txt","r")
+    for line in stop_words:
+        line = line[:-1]
+        text = sub(' '+line+' ', '',text)
     return text.split()
 
 #This function removes from the given graph all the edges towards undefined pages

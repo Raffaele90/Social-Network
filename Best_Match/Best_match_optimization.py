@@ -64,7 +64,7 @@ def create_word_advs():
 
 
 
-def best_match_buono (query, threshold):
+'''def best_match_buono (query, threshold):
     adv_weights = dict()
     best_docs = set()
     array = create_word_advs()
@@ -97,14 +97,14 @@ def best_match(query, threshold):
     impact = list()
     word_advs = array[0]
     wordsInDoc = array[1]
-    x = sort_docs(word_advs)
+    sorted_word_advs = sort_docs(word_advs)
 
     query_words = query.split()
 
     #For every word we look at each document in the list and we increment the document's weight
     for word in query_words:
 
-        impact = insert_sorted(impact,word,((x[word])[0])[1])
+        impact = insert_sorted(impact,word,((sorted_word_advs[word])[0])[1])
         for doc in word_advs[word]:
             if doc not in adv_weights.keys():
                 adv_weights[doc] = ((word_advs[word])[doc])[0]
@@ -119,6 +119,47 @@ def best_match(query, threshold):
     print(word_advs)
 
     return best_docs
+'''
+
+
+def best_match(query, threshold):
+    adv_weights = dict()
+    best_docs = list()
+    array = create_word_advs()
+    impact = list()
+    word_advs = array[0]
+    wordsInDoc = array[1]
+    sorted_word_advs = sort_docs(word_advs)
+
+    query_words = query.split()
+
+    count = 0
+    #For every word we look at each document in the list and we increment the document's weight
+
+    for word in query_words:
+        impact = insert_sorted(impact, word, ((sorted_word_advs[word])[0])[1])
+
+    for word in query_words:
+        if count > 19:
+            break
+
+        list_docs = sorted_word_advs[word]
+        for doc in list_docs:
+            if count > 19:
+                break
+            if doc[0] not in adv_weights.keys():
+                adv_weights[doc[0]] = doc[1]
+                count += 1
+            else:
+                adv_weights[doc] += doc[1]
+        #If we would like to count the occurrences, then we must increment the weights not by 1, but by the number of occurrence of that word in the document
+
+        #We use a threshold to choose which document must be returned
+            if adv_weights[doc[0]] >= threshold:
+                best_docs.append(doc)
+
+    return best_docs
+
 
 def insert_sorted (impact, word, freq):
     l = list()
@@ -180,8 +221,40 @@ def insert_sort_list (lista,doc,freq):
 
 
 #create_word_advs()
-set = best_match("Fox",0)
-print(set)
+list_docs = best_match("Fox Sport",0)
+print(list_docs)
+print (len(list_docs))
 #set2 = exact_match("prova esame")
 #print(set)
 #print(set2)
+
+
+
+
+
+
+
+
+'''Completare set di 20 docs
+    Prendo la prima word se < 20 docs{
+                             prendo tutti
+                             e prendo dalle successive gli altri docs
+                             flag = numero di parola corrente
+                            }
+                    altrimenti prendo i primi 20
+                    flag = numero di parola corrente
+
+    Partendo dalla parola di indice flag
+    prendiamo il primo documento che non fa parte del set dei migliori
+    Controlliamo se lo score della parola di quel documento + sum_impacts della parola restanti dopo flag è > del 20esimo documento
+'''
+
+
+
+
+
+
+
+
+
+
