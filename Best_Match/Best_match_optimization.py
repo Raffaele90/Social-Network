@@ -119,7 +119,7 @@ def best_match(query, threshold):
     print(word_advs)
 
     return best_docs
-'''
+
 
 
 def best_match(query, threshold):
@@ -159,6 +159,127 @@ def best_match(query, threshold):
                 best_docs.append(doc)
 
     return best_docs
+'''
+
+
+def best_match(query, threshold):
+    adv_weights = dict()
+    best_docs = set()
+    array = create_word_advs()
+    impact = list()
+    word_advs = array[0]
+    wordsInDoc = array[1]
+    sorted_word_advs = sort_docs(word_advs)
+
+    query_words = query.split()
+
+
+    #For every word we look at each document in the list and we increment the document's weight
+    for word in query_words:
+
+        impact = insert_sorted(impact,word,((sorted_word_advs[word])[0])[1])
+
+    set_20_docs = list()
+    list_word_scored = list()
+    list_word_no_scored = list()
+    count_docs = 0
+    current_word = ''
+    current_doc_index = 0
+    for word in query_words:
+
+        if count_docs < 20:
+            list_word_scored.append(word)
+            current_doc_index = 0
+            for doc in sorted_word_advs[word]:
+                set_20_docs.append(doc)
+                count_docs +=1
+                current_word = word
+                current_doc_index +=1
+                if count_docs >= 20:
+                    if current_doc_index < len(sorted_word_advs[word]): # significa che la parola corrente ha documenti non scored
+                        list_word_no_scored.append(word)
+                        break
+                else:
+                    break
+        else:
+            list_word_no_scored.append(word)
+
+    list_20_docs = list()
+    for doc in set_20_docs:
+        list_20_docs = insert_doc(doc,list_20_docs)
+
+    #Punto 5 mi calcolo lo score dei 20 documenti solo sulle parole scored
+    for word in list_word_scored:
+        for doc in list_20_docs:
+            d = doc[0]
+            if d not in adv_weights.keys():
+               adv_weights[d] = doc[1]
+            else:
+               adv_weights[d] += doc[1]
+
+    #Punto 6,7
+    index = 0
+    len_list_no_scored = len(list_word_no_scored)
+    for word in list_word_no_scored:
+        list_word_scored.append(word) # Aggiungo la nuova parola alla lista delle scored
+        if word == current_word: # Se è vero, vuol dire che nel punto precedente si è fermato ad una parola e non ha scored tutti i suoi docs
+            for i in range(current_doc_index,len(sorted_word_advs[word])):
+                #Controllo se il documento è già presente nei
+                docss = (sorted_word_advs[word])[0]
+                if (docss[0] not in adv_weights.keys()):
+                    freq_doc_no_scored = ((sorted_word_advs[word])[0])[1]
+                    # Punto 8
+                    sum_impact = 0
+                    # Per ogni termine non scored mi calcolo la somma degli impatti
+                    for j in range(index, len_list_no_scored):
+                        sum_impact += get_freq_word_in_impact(list_word_no_scored[j], impact)
+
+                    freq_doc_no_scored += sum_impact
+                    freq_doc_x = (list_20_docs[len(list_20_docs) - 1])[1]
+                    if freq_doc_no_scored < freq_doc_x:
+                        list_20_docs.pop()
+                        list_20_docs.append(doc)
+                        for word in list_word_scored:
+                            for doc in list_20_docs:
+                                if doc not in adv_weights.keys():
+                                    adv_weights[doc] = doc[1]
+                                else:
+                                    adv_weights[doc] += doc[1]
+                                if adv_weights[doc] >= threshold:
+                                    best_docs.add(doc)
+
+
+        else:
+            # words in generale
+            for doc in sorted_word_advs[word]:
+                if (doc[0] not in adv_weights):
+                    freq_doc_no_scored = ((sorted_word_advs[word])[0])[1]
+                    # Punto 8
+                    sum_impact = 0
+                    # Per ogni termine non scored mi calcolo la somma degli impatti
+                    for j in range(index, len_list_no_scored):
+                        sum_impact += get_freq_word_in_impact(list_word_no_scored[j], impact)
+
+                    freq_doc_no_scored += sum_impact
+                    freq_doc_x = (list_20_docs[len(list_20_docs )-1])[1]
+                    if freq_doc_no_scored < freq_doc_x:
+                        list_20_docs.pop()
+                        list_20_docs.append(doc)
+                        for word in list_word_scored:
+                            for doc in list_20_docs:
+                                if doc not in adv_weights.keys():
+                                    adv_weights[doc] = doc[1]
+                                else:
+                                    adv_weights[doc] += doc[1]
+
+
+
+                                if adv_weights[doc] >= threshold:
+                                    best_docs.add(doc)
+
+    print(adv_weights)
+
+    return best_docs
 
 
 def insert_sorted (impact, word, freq):
@@ -173,8 +294,10 @@ def insert_sorted (impact, word, freq):
     return  impact
 
 
-
-
+def get_freq_word_in_impact(word,impact):
+    for i in range(len(impact)):
+        if (word == (impact[i])[0]):
+            return (impact[i])[1]
 
 def calculate_frequency(word_advs, wordsInDoc):
 
@@ -220,10 +343,20 @@ def insert_sort_list (lista,doc,freq):
     return lista
 
 
+def insert_doc(doc,l):
+
+    for i in range(0,len(l)):
+        if ((l[i])[1] < doc[1]):
+            l.insert(i,doc)
+            return l
+
+    l.append(doc)
+    return l
+
+
 #create_word_advs()
-list_docs = best_match("Fox Sport",0)
-print(list_docs)
-print (len(list_docs))
+list_docs = best_match("FOX Politics Sport",0)
+#print(list_docs)
 #set2 = exact_match("prova esame")
 #print(set)
 #print(set2)
