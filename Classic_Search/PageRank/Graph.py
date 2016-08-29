@@ -11,6 +11,7 @@ import os
 
 # creazione del grafo connesso completo
 # sarà utilizzato per gli algoritmi di ranking
+
 def create_complete_graph(pathdataset,verbose):
     file_parsing = open(pathdataset + "Ranking_Dataset.pickle", "rb")
     graph_merge = pickle.load(file_parsing)
@@ -84,7 +85,6 @@ lg.append(app1)
 lg.append(app2)'''
 #create_complete_graph("../Parser/",False)
 #prova_graph(lg)
-print("Completato")
 
 
 

@@ -1,5 +1,6 @@
 import time
 import pickle
+import os
 
 #!/usr/bin/python
 
@@ -30,6 +31,7 @@ db_path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Searc
 limit = 20
 #We create an inverted index with an entry for every word of a document or for any word on which advertisers requested to appear
 def create_word_advs():
+    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
     infile = open(db_path)
     word_advs = dict()
 
@@ -65,45 +67,70 @@ def create_word_advs():
                     #In this case, we need to associate each name with an accumulator that counts the number of occurrence of the words.
 
     word_advs = calculate_frequency(word_advs,wordsInDoc)
+
+    file_word_advs = open(path + "word_advs.pickle", "ab+")
+    pickle.dump(word_advs, file_word_advs)
+    file_word_advs.close()
+
+    file_word_in_docs = open(path + "word_in_docs.pickle", "ab+")
+    pickle.dump(wordsInDoc, file_word_in_docs)
+    file_word_in_docs.close()
+
     return [word_advs,wordsInDoc]
 
 
-def best_match(query, threshold):
-    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Best_Match"
+def best_match_opt(query, threshold):
+    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
+
     adv_weights = dict()
     best_docs = set()
-    start_time = time.time()
-    array = create_word_advs()
-    print("CREATE_WORD --- %s seconds ---" % (time.time() - start_time))
+
+    time1 = time.time()
+    if (os.path.isfile(path+"word_advs.pickle") and os.path.isfile(path+"word_in_docs.pickle")):
+        file_word_advs = open(path + "word_advs.pickle", "rb")
+        word_advs = pickle.load(file_word_advs)
+
+        file_word_in_doc = open(path + "word_in_docs.pickle", "rb")
+        wordsInDoc = pickle.load(file_word_in_doc)
+
+        file_word_advs.close()
+        file_word_in_doc.close()
+    else:
+        array = create_word_advs()
+        word_advs = array[0]
+        wordsInDoc = array[1]
+
     impact = list()
-    word_advs = array[0]
-    wordsInDoc = array[1]
+
+    print("Tempo  Caricamento WORD ADVS  --- %s seconds ---" % (time.time() - time1))
+
+    time2 = time.time()
+
+    if (os.path.isfile(path + "Matching_Dataset.pickle")):
+        file_matching = open(path + "Matching_Dataset.pickle", "rb")
+        sorted_word_advs = pickle.load(file_matching)
+    else:
+        # ***** Sort di word_advs fatta solo offline *******
+        file_matching = open(path + "Matching_Dataset.pickle", "ab+")
+        sorted_word_advs = sort_docs(word_advs)
+        pickle.dump(sorted_word_advs, file_matching)
+        file_matching.close()
 
 
 
-    # ***** Sort di word_advs fatta solo offline *******
-
-    sorted_word_advs = sort_docs(word_advs)
-    file_matching = open(path + "Matching_Dataset.pickle", "ab+")
-    pickle.dump(sorted_word_advs,file_matching)
-    file_matching.close()
-
-    # *****
-
-    #file_matching = open(path + "Matching_Dataset.pickle", "rb")
-    #sorted_word_advs = pickle.load(file_matching)
 
 
-    print("Sort_Docs --- %s seconds ---" % (time.time() - start_time))
+    print("Tempo  Caricamento PICKLE Sorted --- %s seconds ---" % (time.time() - time2))
+
     query_words = query.split()
 
-    print("SPLIT --- %s seconds ---" % (time.time() - start_time))
-
     #Calcolo impatto di ogni parola della query
+    tempoImpact = time.time()
     for word in query_words:
         impact = insert_sorted(impact,word,((sorted_word_advs[word])[0])[1])
-    print(impact)
-    print("IMPACT --- %s seconds ---" % (time.time() - start_time))
+
+    print("Tempo calcolo impatto --- %s seconds ---" % (time.time() - tempoImpact))
+
     global limit
 
     dict_20_docs = dict()
@@ -134,7 +161,9 @@ def best_match(query, threshold):
         else:
             list_word_no_scored.append(word)
 
+
     list_20_docs = list()
+
     for doc in dict_20_docs:
         list_20_docs = insert_doc_1(doc,dict_20_docs[doc],list_20_docs)
         adv_weights[doc] = dict_20_docs[doc]
@@ -157,8 +186,10 @@ def best_match(query, threshold):
     list_word_scored.remove(to_eliminate)
     #Punto 6,7
     index = 0
+
     for word in list_word_no_scored:
         list_word_scored.append(word) # Aggiungo la nuova parola alla lista delle scored
+        flag = 0
         for i in range(current_doc_index,len(sorted_word_advs[word])):
             docss = (sorted_word_advs[word])[i] # Primo documento per cui bisogna fare lo score
             ds = docss[0]
@@ -181,6 +212,10 @@ def best_match(query, threshold):
                     adv_weights = score_doc(ds, query_words, adv_weights, word_advs)
                     docss[1] = adv_weights[docss[0]]
                     list_20_docs = insert_doc(docss,list_20_docs)
+                else:
+                    flag = 1
+            if flag == 1:
+                break
 
 
 
@@ -192,14 +227,7 @@ def best_match(query, threshold):
         if adv_weights[doc] >= threshold:
            best_docs.add(doc)
 
-    for d in list_20_docs:
-        print(d)
-
-    for d in adv_weights:
-        print(d)
-        print(adv_weights[d])
-
-    return best_docs
+    return list_20_docs
 
 
 def score_doc (document,lws, adv_weights, word_advs):
@@ -210,7 +238,6 @@ def score_doc (document,lws, adv_weights, word_advs):
     return adv_weights
 
 def insert_sorted (impact, word, freq):
-    start_time1 = time.time()
     l = list()
     l.append(word)
     l.append(freq)
@@ -219,8 +246,7 @@ def insert_sorted (impact, word, freq):
             impact.insert(i,l)
             return impact
     impact.append(l)
-    print("IMPACT_FUNCTION--- %s seconds ---" % (time.time() - start_time1))
-    return  impact
+    return impact
 
 
 def get_impact(word,impact):
