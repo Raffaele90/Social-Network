@@ -95,7 +95,7 @@ for i in os.listdir(pathdataset):
         graph, db = read_wibbi(path)
         graph_merge.append(graph)
 
-        getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/"+i[:-6]+".txt")
+        #getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/"+i[:-6]+".txt")
 
         for i in graph.keys():
             if (len(db[i]) != 0):

@@ -21,7 +21,7 @@ def read_content(html):
 
     text = sub(r'[,"\'{:;|}]|&amp|&nbsp|<!--|\.\.\.|--', '', text)
     text = text.lower()
-    stop_words = open("stopwords.txt","r")
+    stop_words = open("stopwords.txt","r") #,encoding="utf-8",errors="ignore"
     for line in stop_words:
         line = line[:-1]
         text = sub(' '+line+' ', '',text)

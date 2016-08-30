@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import timeit
-from lesson1 import *
+from Classic_Search.PageRank.PageRank import *
 
 # Graph is represented with its transition matrix
 simple = ([0, 1/2, 1, 0], [1/3, 0, 0, 1/2], [1/3, 0, 0, 1/2], [1/3, 1/2, 0, 0])
