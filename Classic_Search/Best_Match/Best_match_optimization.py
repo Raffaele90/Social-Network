@@ -27,11 +27,12 @@ import os
 
 ###BEST MATCH###
 
-db_path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/db_Best_Match.txt"
+pathPickles = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/"
+db_path = pathPickles+"db_Best_Match.txt"
 limit = 20
 #We create an inverted index with an entry for every word of a document or for any word on which advertisers requested to appear
 def create_word_advs():
-    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
+    path = pathPickles
     infile = open(db_path)
     word_advs = dict()
 
@@ -79,47 +80,14 @@ def create_word_advs():
     return [word_advs,wordsInDoc]
 
 
-def best_match_opt(query, threshold):
+def best_match_opt(query, threshold,word_advs,sorted_word_advs):
     path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
 
     adv_weights = dict()
     best_docs = set()
-
-    time1 = time.time()
-    if (os.path.isfile(path+"word_advs.pickle") and os.path.isfile(path+"word_in_docs.pickle")):
-        file_word_advs = open(path + "word_advs.pickle", "rb")
-        word_advs = pickle.load(file_word_advs)
-
-        file_word_in_doc = open(path + "word_in_docs.pickle", "rb")
-        wordsInDoc = pickle.load(file_word_in_doc)
-
-        file_word_advs.close()
-        file_word_in_doc.close()
-    else:
-        array = create_word_advs()
-        word_advs = array[0]
-        wordsInDoc = array[1]
-
     impact = list()
 
-    print("Tempo  Caricamento WORD ADVS  --- %s seconds ---" % (time.time() - time1))
-
     time2 = time.time()
-
-    if (os.path.isfile(path + "Matching_Dataset.pickle")):
-        file_matching = open(path + "Matching_Dataset.pickle", "rb")
-        sorted_word_advs = pickle.load(file_matching)
-    else:
-        # ***** Sort di word_advs fatta solo offline *******
-        file_matching = open(path + "Matching_Dataset.pickle", "ab+")
-        sorted_word_advs = sort_docs(word_advs)
-        pickle.dump(sorted_word_advs, file_matching)
-        file_matching.close()
-
-
-
-
-
     print("Tempo  Caricamento PICKLE Sorted --- %s seconds ---" % (time.time() - time2))
 
     query_words = query.split()

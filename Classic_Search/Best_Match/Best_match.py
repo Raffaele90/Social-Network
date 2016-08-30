@@ -111,22 +111,10 @@ def create_word_advs():
 
 
 
-def best_match(query, threshold):
+def best_match(query, threshold,word_advs,wordsInDoc):
     adv_weights = dict()
     path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
-    if (os.path.isfile(path + "word_advs.pickle") and os.path.isfile(path + "word_in_docs.pickle")):
-        file_word_advs = open(path + "word_advs.pickle", "rb")
-        word_advs = pickle.load(file_word_advs)
 
-        file_word_in_doc = open(path + "word_in_docs.pickle", "rb")
-        wordsInDoc = pickle.load(file_word_in_doc)
-
-        file_word_advs.close()
-        file_word_in_doc.close()
-    else:
-        array = create_word_advs()
-        word_advs = array[0]
-        wordsInDoc = array[1]
 
     query_words = query.split()
 

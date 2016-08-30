@@ -20,8 +20,8 @@ def getMostFamous (db,pathfile):
     list_top_words = list()
     c=0
     for p in w:
-        if c>=30:
-            if (list_top_words[29])[1]<w[p]:
+        if c>=100:
+            if (list_top_words[99])[1]<w[p]:
                 list_top_words.pop()
                 list_top_words = insert_s(p,w[p],list_top_words)
         else:
@@ -30,7 +30,7 @@ def getMostFamous (db,pathfile):
     f=open(pathfile,"w")
     for i in range(len(list_top_words)):
 
-        f.write(str(list_top_words[i][0])+"---"+str(list_top_words[i][1])+"\n")
+        f.write(str((list_top_words[i])[0]) +"---"+str((list_top_words[i])[1])+"\n")
     f.close()
 
 def insert_s(key,value,l):
@@ -46,38 +46,42 @@ def insert_s(key,value,l):
     l.append(lista_fons)
     return l
 
-graph_path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/PageRank/Ranking_Dataset.pickle"
 
-db_path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/db_Best_Match.txt"
+
+pathPickles = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/"
+
+db_path = pathPickles+"db_Best_Match.txt"
+
+graph_path = pathPickles+"Ranking_Dataset.pickle"
 
 try:
-    os.remove("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/db_Best_Match.txt")
+    os.remove(pathPickles+"db_Best_Match.txt")
 except OSError:
-    print ("File Già rimossi")
+    print ("db_Best_Match.txt File Già rimosso")
 try:
-    os.remove("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/Matching_Dataset.pickle")
+    os.remove(pathPickles+"Matching_Dataset.pickle")
 except OSError:
-    print("File Già rimossi")
+    print("Matching_Dataset.pickle File Già rimosso")
 try:
-    os.remove("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/word_advs.pickle")
+    os.remove(pathPickles+"word_advs.pickle")
 except OSError:
-    print("File Già rimossi")
+    print("word_advs.pickle File Già rimosso")
 try:
-    os.remove("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/word_in_docs.pickle")
+    os.remove(pathPickles+"word_in_docs.pickle")
 except OSError:
-    print("File Già rimossi")
+    print("word_in_docs.pickle File Già rimosso")
 try:
-    os.remove("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/PageRank/Complete_Graph_Dataset.pickle")
+    os.remove(pathPickles+"Complete_Graph_Dataset.pickle")
 except OSError:
-    print("File Già rimossi")
+    print("Complete_Graph_Dataset.pickle File Già rimosso")
 try:
-    os.remove("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/PageRank/Ranking_Dataset.pickle")
+    os.remove(pathPickles+"Ranking_Dataset.pickle")
 except OSError:
-    print ("File Già rimossi")
+    print ("Ranking_Dataset.pickle File Già rimosso")
 
 
 out_file = open(db_path,"w")
-file_parsed  = open(graph_path, "ab+")
+file_parsed = open(graph_path, "ab+")
 
 path = os.getcwd()
 print(path)
@@ -94,8 +98,6 @@ for i in os.listdir(pathdataset):
         getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/"+i[:-6]+".txt")
 
         for i in graph.keys():
-            if (i == 'http://www.google.it/intl/it/earth/download/ge/'):
-                print(i)
             if (len(db[i]) != 0):
                 str = i +" "
                 for line in db[i]:
@@ -109,4 +111,4 @@ out_file.close()
 
 
 # Creazione del grafo
-create_complete_graph("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/PageRank/",False)
+create_complete_graph(pathPickles,False)

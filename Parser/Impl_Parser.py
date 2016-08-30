@@ -15,11 +15,17 @@ def read_content(html):
     #The function sub substitues any occurrence of the first parameter in the string given as third parameter with an occurrence of the second parameter
     #The first parameter here is given as a regular expression and consists of any html tag
     text = sub(r'<.*?>',' ',html)
+    text = sub(r'<.*', ' ', text)
+    text = sub(r'.*/>', ' ', text)
+    text = sub(r'[??]+|[???]+', ' ', text)
+
     text = sub(r'[,"\'{:;|}]|&amp|&nbsp|<!--|\.\.\.|--', '', text)
+    text = text.lower()
     stop_words = open("stopwords.txt","r")
     for line in stop_words:
         line = line[:-1]
         text = sub(' '+line+' ', '',text)
+
     return text.split()
 
 #This function removes from the given graph all the edges towards undefined pages
@@ -34,7 +40,7 @@ def sanitizer(graph):
 #This function reads a wibbi file and returns the resulting graph and the resulting database
 #(to be processed by the ranking algorithm and the matching algorithm, respectively)
 def read_wibbi(filename):
-    infile = open(filename,"r",encoding="utf-8",errors='ignore')
+    infile = open(filename,"r")
     delim=infile.readline().strip() #It will contain the string that wibbi uses a separator
     nl = infile.readline().strip()
     if nl != "0": #The line after the separator will be either the url of the page or "0" if no more pages are present
@@ -44,7 +50,6 @@ def read_wibbi(filename):
     copy=False
     graph=dict()
     db=dict()
-    
     for line in infile:
         if line.strip() == delim: #If we find the separator, we have copied the entire html
             copy=False
@@ -67,7 +72,6 @@ def read_wibbi(filename):
             
         if copy is True:
             html+=line
-
     graph=sanitizer(graph)
     return graph, db
 
