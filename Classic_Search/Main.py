@@ -1,6 +1,7 @@
 from Classic_Search.Best_Match.Best_match import *
 from Classic_Search.Best_Match.Best_match_optimization import *
 from Classic_Search.PageRank.PageRank import *
+from Classic_Search.PageRank.PageRankParallel import *
 import time
 import csv
 
@@ -35,7 +36,7 @@ def loadPickle():
     return [word_advs,sorted_word_advs,wordsInDoc]
 
 def toResultFile(path1, name_result_file, lista,rv):
-    with open(path+'Opt_simple.csv', 'w') as csvfile:
+    with open(path1+name_result_file+'.csv', 'w') as csvfile:
         fieldnames = ['Page', 'Best Match', 'Rank']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -44,12 +45,12 @@ def toResultFile(path1, name_result_file, lista,rv):
         csvfile.close()
 
 
-
-
-
+s = 0.85
+step = 70
+confidence = 0
 
 path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Results/"
-query = "foNS security"
+query = "google cloud adobe privacy"
 query = query.lower()
 pathPickles = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/"
 file_graph = open(pathPickles+"Complete_Graph_Dataset.pickle", "rb")
@@ -65,33 +66,74 @@ print("Pickles Caricarti OK")
 
 
 ''' *** BEST MATCH - PAGE RANK ********* '''
-start_time = time.time()
-bestmatchTime = time.time()
-list_20_docs = best_match(query, 0,word_advs,wordsInDoc)
-print("Tempo  BEST MATCH --- %s seconds ---" % (time.time() - bestmatchTime))
+start_time = timeit.default_timer()
+bestmatchTime_simple = timeit.default_timer()
+list_20_docs_simple = best_match(query, 0,word_advs,wordsInDoc)
+bestmatchTime_simple = timeit.default_timer() - bestmatchTime_simple
+print("Tempo  BEST MATCH --- %s seconds ---" % (bestmatchTime_simple))
 
-pageRankTime = time.time()
+pageRankTime = timeit.default_timer()
+t,rank = pageRank2(graph,s,step,confidence)
+elapsed = timeit.default_timer() - pageRankTime
+print("Tempo  PAGE RANK --- %s seconds ---" % elapsed)
 
-t,rank = pageRank2(graph,0.85,70,0)
-print("Tempo  PAGE RANK --- %s seconds ---" % (time.time() - pageRankTime))
-
-print("--- %s seconds ---" % (time.time() - start_time))
-toResultFile(path,"Simple_simple.txt",list_20_docs,rank)
-
-
+print("BESTMATCH + PAGE RANK TOT --- %s seconds ---" % (timeit.default_timer() - start_time))
+toResultFile(path,"Simple_simple.csv",list_20_docs_simple,rank)
 
 
-''' ***+++ BEST MATCH OPTIMIZATION - PAGE RANK *********
-start_time = time.time()
-bestmatchTime = time.time()
-list_20_docs = best_match_opt(query, 0,word_advs,sorted_advs)
-print("Tempo  BEST MATCH --- %s seconds ---" % (time.time() - bestmatchTime))
+print()
 
-pageRankTime = time.time()
-t,rank = pageRank2(graph,0.7,70,0)
-print("Tempo  PAGE RANK --- %s seconds ---" % (time.time() - pageRankTime))
-print("Tempo di esecuzione Best match Opt con PageRank--- %s seconds ---" % (time.time() - start_time))
-toResultFile(path,"Opt_simple.txt",list_20_docs,rank)
+''' ***+++ BEST MATCH OPTIMIZATION - PAGE RANK ********* '''
+start_time = timeit.default_timer()
+bestmatchTime_opt = timeit.default_timer()
+list_20_docs_opt = best_match_opt(query, 0,word_advs,sorted_advs)
+bestmatchTime_opt = timeit.default_timer() - bestmatchTime_opt
+print("Tempo  BEST MATCH OPT--- %s seconds ---" % (bestmatchTime_opt))
 
-'''
+pageRankTime = timeit.default_timer()
+t,rank = pageRank2(graph,s,step,confidence)
+print("Tempo  PAGE RANK --- %s seconds ---" % (timeit.default_timer() - pageRankTime))
+print("BEST MATCH OPT  + PAGE RANK TOT --- %s seconds ---" % (timeit.default_timer() - start_time))
+toResultFile(path,"Opt_Simple.csv",list_20_docs_opt,rank)
+
+print()
+''' *** BEST MATCH - PAGE RANK PARALLEL ********* '''
+
+
+degree,simple=create_struct_parallel(graph,4)
+
+start_time = timeit.default_timer()
+time, rank = pageRank3(simple, degree, len(graph), s, step, confidence, 16)
+elapsed = timeit.default_timer() - start_time
+
+print("BEST MATCH   + PAGE RANK PARALLEL TOT --- %s seconds ---" % (elapsed + bestmatchTime_simple))
+path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Results/"
+
+print()
+
+ran = dict()
+for r in range(len(rank)):
+    dizionario = rank[r]
+    for x in dizionario:
+        ran[x] = rank[r][x]
+toResultFile(path,"Simple_Parallel.csv",list_20_docs_simple,ran)
+
+
+''' *** BEST MATCH OPT - PAGE RANK PARALLEL ********* '''
+
+degree,simple=create_struct_parallel(graph,4)
+
+start_time = timeit.default_timer()
+time, rank = pageRank3(simple, degree, len(graph), s, step, confidence, 16)
+elapsed = timeit.default_timer() - start_time
+
+print("BEST MATCH OPT  + PAGE RANK PARALLEL TOT --- %s seconds ---" % (elapsed + bestmatchTime_opt))
+path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Results/"
+
+ran = dict()
+for r in range(len(rank)):
+    dizionario = rank[r]
+    for x in dizionario:
+        ran[x] = rank[r][x]
+toResultFile(path,"Opt_Parallel.csv",list_20_docs_opt,ran)
 

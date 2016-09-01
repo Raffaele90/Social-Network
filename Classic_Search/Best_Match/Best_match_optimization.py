@@ -88,7 +88,6 @@ def best_match_opt(query, threshold,word_advs,sorted_word_advs):
     impact = list()
 
     time2 = time.time()
-    print("Tempo  Caricamento PICKLE Sorted --- %s seconds ---" % (time.time() - time2))
 
     query_words = query.split()
 
@@ -97,7 +96,6 @@ def best_match_opt(query, threshold,word_advs,sorted_word_advs):
     for word in query_words:
         impact = insert_sorted(impact,word,((sorted_word_advs[word])[0])[1])
 
-    print("Tempo calcolo impatto --- %s seconds ---" % (time.time() - tempoImpact))
 
     global limit
 

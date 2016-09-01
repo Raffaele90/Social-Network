@@ -68,7 +68,7 @@ def crea_mat(k):
     return mat
 
 
-def scatter(gsplit,g,subsets):
+def scatter1(gsplit,g,subsets):
     size=len(gsplit)
     for i in range(size):
         for key in subsets[i]:
@@ -77,6 +77,16 @@ def scatter(gsplit,g,subsets):
                 gsplit[i][j][key]=set.intersection(app,subsets[j])
 
     return gsplit
+
+def scatter(gsplit,g,subsets):
+    size=len(gsplit)
+    for i in range(size):
+        for j in range(size):
+            for key in subsets[i]:
+                app = g[key]
+                gsplit[i][j][key] = set.intersection(app,subsets[j])
+    return gsplit
+
 
 
 def getdeg(g,k,subsets):
@@ -87,16 +97,44 @@ def getdeg(g,k,subsets):
         for k in subsets[j]:
             deg[j][k]=len(g[k])
     return deg
+
+'''
+
 path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/Complete_Graph_Dataset.pickle"
 file_graph = open(path, "rb")
 graph = pickle.load(file_graph)
 
 
-degree,simple=create_struct_parallel(graph,2)
+
+# Graph is represented with its adjacency lists
+simple = dict()
+simple['x'] = {'y','z','w'}
+simple['y'] = {'x','w'}
+simple['z'] = {'x'}
+simple['w'] = {'y','z'}
+
+degree,simple=create_struct_parallel(simple,2)
+
 
 start_time = timeit.default_timer()
-time, rank = pageRank3(simple, degree, 4, 0.85, 60, 1, 8)
+time, rank = pageRank3(simple, degree, 4, 0.85, 60, 0, 4)
 elapsed = timeit.default_timer() - start_time
 
 print (rank[0:20])
 print(elapsed)
+
+
+# Graph is represented with its adjacency lists
+simple = dict()
+simple['x'] = {'y','z','w'}
+simple['y'] = {'x','w'}
+simple['z'] = {'x'}
+simple['w'] = {'y','z'}
+
+start_time = timeit.default_timer()
+time2, rank2 = pageRank2(simple,0.85,60,0)
+elapsed2 = timeit.default_timer() - start_time
+
+print(rank2, time2, elapsed2)
+
+'''

@@ -48,6 +48,10 @@ def insert_s(key,value,l):
 
 
 
+
+
+
+
 pathPickles = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/"
 
 db_path = pathPickles+"db_Best_Match.txt"
@@ -78,37 +82,47 @@ try:
     os.remove(pathPickles+"Ranking_Dataset.pickle")
 except OSError:
     print ("Ranking_Dataset.pickle File Già rimosso")
+try:
+    os.remove(pathPickles+"Categories_Graph.pickle")
+except OSError:
+    print ("Categories_Graph.pickle File Già rimosso")
 
 
 out_file = open(db_path,"w")
 file_parsed = open(graph_path, "ab+")
+file_categories_graph = open(pathPickles+"/Categories_Graph.pickle", "ab+")
 
 path = os.getcwd()
 print(path)
 pathdataset = path+"/datasetRS"
+categories_graph = dict() # dict contains the graphs for each category
 
 graph_merge = list()
 
 for i in os.listdir(pathdataset):
+    print(i)
     if i.endswith(".pages"):
         path = pathdataset + "/" + i
         graph, db = read_wibbi(path)
+        categories_graph[i[:-6]] = graph
         graph_merge.append(graph)
 
-        #getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/"+i[:-6]+".txt")
-
+        getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/Top_Words/"+i[:-6]+".txt")
+        print("Get Most Famous Words OK")
         for i in graph.keys():
             if (len(db[i]) != 0):
-                str = i +" "
+                stringa = i +" "
                 for line in db[i]:
-                  str += line.lower()+","
+                  stringa += line.lower()+","
 
-                out_file.write(str[:-1]+"\n")
+                out_file.write(stringa[:-1]+"\n")
 
+
+pickle.dump(categories_graph,file_categories_graph)
 pickle.dump(graph_merge,file_parsed)
 file_parsed.close()
 out_file.close()
-
+file_categories_graph.close()
 
 # Creazione del grafo
 create_complete_graph(pathPickles,False)

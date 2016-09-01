@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import pickle
+import re
 from re import findall, sub
 
 #Find all links in a web page
@@ -8,7 +9,9 @@ def read_links(html):
     #The function findall returns an array of all the occurrence of the searched element in the string given as second parameter
     #The searched element is given as a regular expression (this is indicated by the 'r' written in front of the first parameter)
     #The regular expression that we wrote returns the content of the href parameter of an html anchor
-    return findall(r'<a .*?href=[\',\"](.*?)[\',\"].*?>',html)
+
+    return  findall(r'<a .*?href=[\',\"](.*?)[\',\"].*?>',html)
+
 
 #Find all the text in an html page that is not within tags
 def read_content(html):
@@ -17,6 +20,9 @@ def read_content(html):
     text = sub(r'<.*?>',' ',html)
     text = sub(r'<.*', ' ', text)
     text = sub(r'.*/>', ' ', text)
+    text = sub(r'.*>', ' ', text)
+    #text = sub(r'\n', ' ', text)
+    #text = sub(r'<style>.*<\/style>', ' ', text)
     text = sub(r'[??]+|[???]+', ' ', text)
 
     text = sub(r'[,"\'{:;|}]|&amp|&nbsp|<!--|\.\.\.|--', '', text)

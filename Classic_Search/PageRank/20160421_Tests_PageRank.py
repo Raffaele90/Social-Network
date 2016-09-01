@@ -10,7 +10,7 @@ start_time = timeit.default_timer()
 time1, rank1 = pageRank1(simple,0.85,75,0)
 elapsed1 = timeit.default_timer() - start_time
 
-print(rank1, time1, elapsed1)
+#print(rank1, time1, elapsed1)
 
 # Graph is represented with its adjacency lists
 simple = dict()
@@ -20,7 +20,7 @@ simple['z'] = {'x'}
 simple['w'] = {'y','z'}
 
 start_time = timeit.default_timer()
-time2, rank2 = pageRank2(simple,0.85,75,0)
+time2, rank2 = pageRank2(simple,0.6,75,0)
 elapsed2 = timeit.default_timer() - start_time
 
 print(rank2, time2, elapsed2)
@@ -74,7 +74,7 @@ degree[1]['z'] = 1
 degree[1]['w'] = 2
 
 start_time = timeit.default_timer()
-time3, rank3 = pageRank3(simple,degree,4,1,0,1,4)
+time3, rank3 = pageRank3(simple,degree,4,0.6,75,0,4)
 elapsed3 = timeit.default_timer() - start_time
 
 print(rank3, time3, elapsed3)
