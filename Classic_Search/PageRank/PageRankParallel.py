@@ -28,9 +28,6 @@ def create_struct_parallel(graph,k):
     degrees=getdeg(graph,k,subsets)
 
 
-    print()
-
-
     return [degrees,graph_splitted]
 
 
@@ -98,7 +95,7 @@ def getdeg(g,k,subsets):
             deg[j][k]=len(g[k])
     return deg
 
-'''
+
 
 path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/Complete_Graph_Dataset.pickle"
 file_graph = open(path, "rb")
@@ -137,4 +134,3 @@ elapsed2 = timeit.default_timer() - start_time
 
 print(rank2, time2, elapsed2)
 
-'''

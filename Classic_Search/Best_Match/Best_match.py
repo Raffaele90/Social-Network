@@ -107,6 +107,7 @@ def create_word_advs():
     pickle.dump(wordsInDoc, file_word_in_docs)
     file_word_in_docs.close()
 
+    print(len(word_advs))
     return [word_advs,wordsInDoc]
 
 
@@ -141,7 +142,7 @@ def best_match(query, threshold,word_advs,wordsInDoc):
         print(d)
         print(adv_weights[d])'''
 
-
+    print(len(word_advs))
     return list_20_docs[0:19]
 
 
@@ -158,6 +159,41 @@ def insert_doc_1(key,value,l):
     l.append(lista_fons)
     return l
 
+def sensitive_best_match(query,threshold,word_advs,wordsInDoc):
+    adv_weights = dict()
+    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
+
+
+    query_words = query.split()
+
+    #For every word we look at each document in the list and we increment the document's weight
+    for word in query_words:
+        for doc in word_advs[word]:
+
+
+            if doc not in adv_weights.keys():
+                adv_weights[doc] = (((word_advs[word])[doc])[0])/wordsInDoc[doc]
+            else:
+               adv_weights[doc] += (((word_advs[word])[doc])[0])/wordsInDoc[doc]
+        #If we would like to count the occurrences, then we must increment the weights not by 1, but by the number of occurrence of that word in the document
+
+
+
+    list_all=list()#list_20_docs = list()
+    for doc in adv_weights:
+        if adv_weights[doc] >= threshold:
+            app=list()
+            app.append(doc)
+            app.append(adv_weights[doc])
+            list_all.append(app)#list_20_docs = insert_doc_1(doc,adv_weights[doc],list_20_docs)
+
+    #print(adv_weights)
+    '''for d in best_docs:
+        print(d)
+        print(adv_weights[d])'''
+
+
+    return list_all#return list_20_docs[0:19]
 
 #create_word_advs()
 #start_time = time.time()

@@ -48,10 +48,6 @@ def insert_s(key,value,l):
 
 
 
-
-
-
-
 pathPickles = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/"
 
 db_path = pathPickles+"db_Best_Match.txt"
@@ -107,7 +103,7 @@ for i in os.listdir(pathdataset):
         categories_graph[i[:-6]] = graph
         graph_merge.append(graph)
 
-        getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/Top_Words/"+i[:-6]+".txt")
+        #getMostFamous(db,"/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/TopicSensitive/Top_Words/"+i[:-6]+".txt")
         print("Get Most Famous Words OK")
         for i in graph.keys():
             if (len(db[i]) != 0):
