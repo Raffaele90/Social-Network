@@ -1,5 +1,6 @@
 import time
 import pickle
+import timeit
 import os
 #!/usr/bin/python
 
@@ -113,44 +114,57 @@ def create_word_advs():
 
 
 def best_match(query, threshold,word_advs,wordsInDoc):
+    startTime = timeit.default_timer()
+    list_20_docs = list()
     adv_weights = dict()
     path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
 
 
     query_words = query.split()
-
+    cont_docs_analized = 0
     #For every word we look at each document in the list and we increment the document's weight
     for word in query_words:
         for doc in word_advs[word]:
-
+            cont_docs_analized += 1
 
             if doc not in adv_weights.keys():
                 adv_weights[doc] = (((word_advs[word])[doc])[0])/wordsInDoc[doc]
+                list_20_docs = insert_doc_1(doc, adv_weights[doc], list_20_docs)
+
             else:
                adv_weights[doc] += (((word_advs[word])[doc])[0])/wordsInDoc[doc]
-        #If we would like to count the occurrences, then we must increment the weights not by 1, but by the number of occurrence of that word in the document
+               for el in list_20_docs:
+                   if el[0] == doc:
+                       list_20_docs.remove(el)
+               list_20_docs = insert_doc_1(doc, adv_weights[doc], list_20_docs)
+
+               #If we would like to count the occurrences, then we must increment the weights not by 1, but by the number of occurrence of that word in the document
 
 
+    #list_20_docs = list(reversed(sorted(adv_weights.items(), key=lambda x:x[1])))[:20]
 
-    list_20_docs = list()
+    list_20_docs.clear()
     for doc in adv_weights:
         if adv_weights[doc] >= threshold:
             list_20_docs = insert_doc_1(doc,adv_weights[doc],list_20_docs)
 
-    #print(adv_weights)
-    '''for d in best_docs:
-        print(d)
-        print(adv_weights[d])'''
-
-    print(len(word_advs))
-    return list_20_docs[0:19]
+    return cont_docs_analized,list_20_docs
 
 
 def insert_doc_1(key,value,l):
+
+    size = len(l)
+
+    if size == 20:
+        if value < l[size-1][1]:
+            return l
+        else:
+            l.pop(size - 1)
+
     lista_fons = list()
     lista_fons.append(key)
     lista_fons.append(value)
-    for i in range(0,len(l)):
+    for i in range(0,size-1):
         if ((l[i])[1] < value):
 
             l.insert(i,lista_fons)

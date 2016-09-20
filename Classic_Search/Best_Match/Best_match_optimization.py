@@ -1,5 +1,6 @@
 import time
 import pickle
+import timeit
 import os
 
 #!/usr/bin/python
@@ -13,7 +14,7 @@ import os
 #This is a dictionary that for every word (or for every query phrase) mantains a list of
 #documents containing that word (query phrase) / advertisers requesting to appear on that word (query phrase).
 #In this phase, we assume that there is a database in which we save for each document (advertiser, resp.)
-#the link to the document (the name of the advertiser, resp.)
+#the link to the document (the name of the advertiser, resp.)d
 #and the list of word (or phrases) of the document (on which the advertiser request to appear, resp.).
 #In the implementations below we assume that the database is a file as follows:
 #    nome_adv1 prova,test,prova esame,esame,appello,appello esame
@@ -80,22 +81,17 @@ def create_word_advs():
     return [word_advs,wordsInDoc]
 
 
-def best_match_opt(query, threshold,word_advs,sorted_word_advs):
-    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
+def best_match_opt(query, threshold,word_advs,sorted_word_advs,wordInDoc):
 
+    cont_docs_analized=0
     adv_weights = dict()
-    best_docs = set()
     impact = list()
-
-    time2 = time.time()
-
     query_words = query.split()
 
+    residual_impact=0
     #Calcolo impatto di ogni parola della query
-    tempoImpact = time.time()
     for word in query_words:
         impact = insert_sorted(impact,word,((sorted_word_advs[word])[0])[1])
-
 
     global limit
 
@@ -104,12 +100,16 @@ def best_match_opt(query, threshold,word_advs,sorted_word_advs):
     list_word_no_scored = list()
     count_docs = 0
     current_doc_index = 0
-    for word in query_words:
+
+    for index_imp in range(len(impact)):
+        word = impact[index_imp][0]
+        residual_impact += impact[index_imp][1]
         if count_docs < limit:
             list_word_scored.append(word)
             current_doc_index = 0
 
             for doc in sorted_word_advs[word]:
+                cont_docs_analized +=1
                 if doc[0] in dict_20_docs:
                     current_doc_index +=1
                 else:
@@ -127,80 +127,76 @@ def best_match_opt(query, threshold,word_advs,sorted_word_advs):
         else:
             list_word_no_scored.append(word)
 
-
     list_20_docs = list()
 
     for doc in dict_20_docs:
         list_20_docs = insert_doc_1(doc,dict_20_docs[doc],list_20_docs)
         adv_weights[doc] = dict_20_docs[doc]
 
+
     # Punto 5 mi calcolo lo score dei 20 documenti su tutte le parole query
     for doc in list_20_docs:
         d = doc[0]
-        adv_weights = score_doc(d, query_words, adv_weights, word_advs)
+        adv_weights = score_doc(d, query_words, adv_weights, word_advs,wordInDoc)
+
 
     list_20_docs.clear()
     for doc in adv_weights:
         list_20_docs = insert_doc_1(doc,adv_weights[doc],list_20_docs)
 
-
-    #Punto 5 mi calcolo lo score dei 20 documenti solo sulle parole scored
-    ''' for doc in list_20_docs:
-        d = doc[0]
-        adv_weights = score_doc(d, list_word_scored, adv_weights, word_advs)'''
-
     list_word_scored.remove(to_eliminate)
     #Punto 6,7
-    index = 0
 
-    for word in list_word_no_scored:
+    counter = 1
+    listaaaa = list(list_word_no_scored)
+
+    contamio = 0
+    for word in listaaaa:
+        residual_impact -= sorted_word_advs[word][0][1]
+        list_word_no_scored.remove(word)
         list_word_scored.append(word) # Aggiungo la nuova parola alla lista delle scored
-        flag = 0
+
         for i in range(current_doc_index,len(sorted_word_advs[word])):
             docss = (sorted_word_advs[word])[i] # Primo documento per cui bisogna fare lo score
             ds = docss[0]
-            if (docss[0] not in adv_weights): # Non è uno dei migliori 20 ???
+            if (docss[0] not in adv_weights): # Docss potrebbe essere un canditato ad entrare nella lista
                 freq_doc_no_scored = ((sorted_word_advs[word])[i])[1]
                 # Punto 8
-                sum_impact = 0
-                index = 0
-                # Per ogni termine non scored mi calcolo la somma degli impatti
-                for j in range(index, len(list_word_no_scored)):
-                    sum_impact += get_impact(list_word_no_scored[j], impact)
-
-                freq_doc_no_scored += sum_impact
+                cont_docs_analized +=1
+                freq_doc_no_scored += residual_impact
                 freq_doc_x = (list_20_docs[-1])[1]
                 if freq_doc_no_scored > freq_doc_x: # Il 20esimo è meno pesante di quello che sta per entrare ?
-                    doc20 = list_20_docs.pop()
-                    del adv_weights[doc20[0]]
-                    #adv_weights = score_doc(ds, list_word_scored, adv_weights, word_advs)
-                    adv_weights[ds] = 0
-                    adv_weights = score_doc(ds, query_words, adv_weights, word_advs)
-                    docss[1] = adv_weights[docss[0]]
-                    list_20_docs = insert_doc(docss,list_20_docs)
+                    len_list_20_doc = len(list_20_docs)
+                    if len_list_20_doc == 20:
+                        contamio+=1
+                        doc20 = list_20_docs[len_list_20_doc-1]
+                        adv_weights = score_doc(ds, query_words, adv_weights, word_advs, wordInDoc)
+                        if (adv_weights[ds] > doc20[1]):
+                            list_20_docs.remove(doc20)
+                            docss[1] = adv_weights[docss[0]]
+                            list_20_docs = insert_doc_1(docss[0],docss[1],list_20_docs)
+
+                    else:
+                        contamio+=1
+                        adv_weights = score_doc(ds, query_words, adv_weights, word_advs,wordInDoc)
+                        docss[1] = adv_weights[docss[0]]
+                        list_20_docs = insert_doc_1(docss[0],docss[1],list_20_docs)
+
                 else:
-                    flag = 1
-            if flag == 1:
-                break
-
-
+                    break
 
         current_doc_index = 0
-        list_word_no_scored.remove(word)
+        counter +=1
+    return cont_docs_analized,list_20_docs
 
 
-    for doc in adv_weights:
-        if adv_weights[doc] >= threshold:
-           best_docs.add(doc)
 
-    return list_20_docs
-
-
-def score_doc (document,lws, adv_weights, word_advs):
-    for word in lws:
+def score_doc (document,query_words, adv_weights, word_advs,wordInDoc):
+    adv_weights[document] = 0
+    for word in query_words:
         if document in word_advs[word]:
-            if document in adv_weights.keys():
-                adv_weights[document] += ((word_advs[word])[document])[0]
+            if document in adv_weights:
+                adv_weights[document] += (((word_advs[word])[document])[0])/wordInDoc[document]
     return adv_weights
 
 def insert_sorted (impact, word, freq):
@@ -274,6 +270,28 @@ def insert_doc(doc,l):
     return l
 
 def insert_doc_1(key,value,l):
+
+    size = len(l)
+
+    if size == 20:
+        if value < l[size-1][1]:
+            return l
+        else:
+            l.pop(size - 1)
+
+    lista_fons = list()
+    lista_fons.append(key)
+    lista_fons.append(value)
+    for i in range(0,size-1):
+        if ((l[i])[1] < value):
+
+            l.insert(i,lista_fons)
+            return l
+
+    l.append(lista_fons)
+    return l
+
+def insert_doc_1(key,value,l):
     lista_fons = list()
     lista_fons.append(key)
     lista_fons.append(value)
@@ -285,18 +303,6 @@ def insert_doc_1(key,value,l):
 
     l.append(lista_fons)
     return l
-
-#create_word_advs()
-#path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Best_Match"
-
-#start_time = time.time()
-#list_docs = best_match("Facebook Twitter information",0)
-#print("--- %s seconds ---" % (time.time() - start_time))
-#print(list_docs)
-#set2 = exact_match("prova esame")
-#print(set)
-#print(set2)
-
 
 
 

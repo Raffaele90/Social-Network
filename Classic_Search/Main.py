@@ -44,32 +44,37 @@ def loadPickle():
     return [word_advs,sorted_word_advs,wordsInDoc,categories_graph,pick_words]
 
 
-def toResultFile(path1, name_result_file, lista,rv,bm,ranking,time_bm,time_ranking):
+def toResultFile(path1, name_result_file, lista,rv,bm,ranking,time_bm,time_ranking,count_docs_analized):
     with open(path1+name_result_file+'.csv', 'w') as csvfile:
 
-        fieldnames = ['Query']
+
+        fieldnames = ['Page' , 'Best Match', 'Rank','Category','T_'+bm,'T_'+ranking,'Tot_Time']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerow({'Query': query})
-
-        writer.writerow({'Query': " "})
-
-        fieldnames = ['Page', 'Best Match', 'Rank','T_'+bm,'T_'+ranking,'Tot_Time']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        print ("URL \t Rank")
+        print("Query")
         for doc in lista:
-            val_bm = doc[1] * 100
+            val_bm = doc[1]
             val_bm = sub(r'\.', ',', str(val_bm))
             val_bm = sub(r'e', 'E', val_bm)
-
-            val_rank = rv[doc[0]] * 10000
+            category = ""
+            val_rank = rv[doc[0]] * 1000000
             val_rank = sub(r'\.', ',', str(val_rank))
             val_rank = sub(r'e', 'E', val_rank)
-            writer.writerow({'Page': str(doc[0]), 'Best Match': val_bm, 'Rank': val_rank})
 
-        writer.writerow({'Page': "", 'Best Match': "", 'Rank': "",'T_'+bm: str(time_bm), 'T_'+ranking: str(time_ranking),'Tot_Time': str(time_bm+time_ranking)})
+            for cat in categories_graph.keys():
+                if doc[0] in categories_graph[cat].keys():
+                    category +="-"+cat
+            print(str(doc[0]) + " \t " + str(val_rank)+" \t "+category)
+            writer.writerow({'Page': str(doc[0]), 'Best Match': val_bm, 'Rank': val_rank, 'Category': category})
+
+        writer.writerow({'Page': "", 'Category': "" , 'Best Match': "", 'Rank': "",'T_'+bm: str(time_bm), 'T_'+ranking: str(time_ranking),'Tot_Time': str(time_bm+time_ranking)})
+        writer.writerow({'Best Match': "Docs_analized "+str(count_docs_analized)})
 
 
+        csvfile.close()
+
+        '''with open(path1 + name_result_file + '_query_freq.csv', 'w') as csvfile:
 
         diz = dict()
         fieldnames2 = []
@@ -81,41 +86,41 @@ def toResultFile(path1, name_result_file, lista,rv,bm,ranking,time_bm,time_ranki
             for i in l:
                 diz[q].append(i)
 
-        #writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        #writer.writeheader()
+
         csvWriter = csv.writer(csvfile)
         csvWriter.writerow(list(diz.keys()))
         # now data, assuming each column has the same # of values
         for i in range(20):
             csvWriter.writerow([diz[k][i] for k in diz.keys()])
 
-
-            #    writer = csv.writer(csvfile)
-            #   for key, value in diz.items():
-            #        writer.writerow([key, value])
-
-        csvfile.close()
-
+        fieldnames = ['Query']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow({'Query': query})
+        csvfile.close()'''
 
 
 def run_classic_search(bm,ranking,query,num_query):
 
+    list_20_docs = list()
     print((bm+" "+ranking).upper())
     bestmatchTime = timeit.default_timer()
     if (bm == "best_match"):
-        list_20_docs = best_match(query, 0, word_advs, wordsInDoc)
+        list_20_docs.clear()
+        cont_docs_anlized,list_20_docs = best_match(query, 0, word_advs, wordsInDoc)
     elif bm == "best_match_opt":
-        list_20_docs = best_match_opt(query, 0,word_advs,sorted_advs)
+        list_20_docs.clear()
+        cont_docs_anlized,list_20_docs = best_match_opt(query, 0,word_advs,sorted_advs,wordsInDoc)
     bestmatchTime_elapsed = timeit.default_timer() - bestmatchTime
     print("Tempo "+bm+" --- %s seconds ---" % (bestmatchTime_elapsed))
 
 
-    degree, simple = create_struct_parallel(graph, 4)
+    degree, simple = create_struct_parallel(graph, 2)
     rankingTime = timeit.default_timer()
     if ranking == "page_rank":
         t, rank = pageRank2(graph, s, step, confidence)
     elif ranking == "page_rank_parallel":
-        t, rank = pageRank3(simple, degree, len(graph), s, step, confidence, 16)
+        t, rank = pageRank3(simple, degree, len(graph), s, step, confidence, 4)
 
     elif ranking == "topic_sensitive":
         #t, rank = topicSensitiveRanking(graph, s, step, confidence, query, categories_graph, top_words)
@@ -140,24 +145,39 @@ def run_classic_search(bm,ranking,query,num_query):
             dizionario = rank[r]
             for x in dizionario:
                 ran[x] = rank[r][x]
-        toResultFile(path_result, bm+" "+ranking, list_20_docs, ran,bm,ranking,bestmatchTime_elapsed,rankingelapsed)
+        toResultFile(path_result, bm+" "+ranking, list_20_docs, ran,bm,ranking,bestmatchTime_elapsed,rankingelapsed,cont_docs_anlized)
     else:
         print()
-        toResultFile(path_result, bm+ranking, list_20_docs, rank,bm,ranking,bestmatchTime_elapsed,rankingelapsed)
+        toResultFile(path_result, bm+ranking, list_20_docs, rank,bm,ranking,bestmatchTime_elapsed,rankingelapsed,cont_docs_anlized)
     #time.sleep(5)
     print()
 
+    print("Query: "+query)
 
 
 
 
 
 
+def stampa_wort_per_frequenza(namefile,min,max,sorted_advs):
+    path1="/Users/raffaeleschiavone/PycharmProjects/Social-Network/"
+    with open(path1 +  namefile + '.csv', 'w') as csvfile:
+        fieldnames = ['Word', 'Impatto', 'N_Docs']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for word in sorted_advs:
+            app = sorted_advs[word][0]
 
 
+            if app[1] > min and sorted_advs[word][0][1] < max:
+
+                writer.writerow({'Word':word, 'Impatto':str(sorted_advs[word][0][1]),'N_Docs':str(len(sorted_advs[word]))})
+
+    csvfile.close()
 
 s = 0.85
-step = 70
+step = 75
 confidence = 0
 
 path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Results/"
@@ -173,6 +193,18 @@ sorted_advs = pickles[1]
 wordsInDoc = pickles[2]
 categories_graph=pickles[3]
 top_words = pickles[4]
+
+
+#stampa_wort_per_frequenza("word_0.1_0.9",0.001,0.04,sorted_advs)
+
+#stampa_wort_per_frequenza("word_0.5_1.0",0.05,0.1,sorted_advs)
+#stampa_wort_per_frequenza("word_1.0_2.0",0.1,0.2,sorted_advs)
+#stampa_wort_per_frequenza("word_2.0_3.0",0.2,0.3,sorted_advs)
+#stampa_wort_per_frequenza("word_3.0_5.0",0.3,0.5,sorted_advs)
+
+
+
+
 word_X_cat = dict()
 for cat in top_words:
     for w in top_words[cat]:
@@ -181,9 +213,25 @@ for cat in top_words:
         else:
             word_X_cat[w] = set()
             word_X_cat[w].add(cat)
+
+
+wordssss = "hoteles hotel booking.com hotels fons click"
+for wordss in wordssss.split(" "):
+    print(wordss)
+    print(word_X_cat[wordss])
+
+
 print("Pickles Caricarti OK")
 
-queries=["drugs medicine","nba sports","health medicine food","information security facebook twitter","science videos"]
+#Query 0 = 2Top 2Center 2Low  "page - news us link information"
+#Query 1 = 2Top 4Center       "company page new best sports 2014"
+#Query 2 = 7 low              "information link 2014 latest account network hit"
+#Query 3 = 7 Top              "company nba google - directv mtv squad"
+#Query 4 = 3 Top              "&#160 href= -"
+#Query 5 = 1Top 1Center 1Low  "- video information"
+#Query 6 = 3 Top 5Low         ". news href= - svenska ratings informationthe wherever bundle"
+
+queries =["drugs"]
 size =len(queries)
 toRemove = []
 for query in queries:
@@ -211,17 +259,17 @@ for i in range(len(queries)):
     print()
     print("**** Query "+num_query+" ****")
     print()
-    run_classic_search("best_match","page_rank",query,num_query)
 
-    """
-    run_classic_search("best_match", "page_rank_parallel", query,num_query)
-    run_classic_search("best_match_opt", "page_rank", query,num_query)
-    run_classic_search("best_match_opt", "page_rank_parallel", query,num_query)
+    run_classic_search("best_match", "page_rank", query, num_query)
+    #run_classic_search("best_match_opt", "page_rank", query, num_query)
+
+    #run_classic_search("best_match", "page_rank_parallel", query,num_query)
+    #run_classic_search("best_match_opt", "page_rank_parallel", query,num_query)
     run_classic_search("best_match", "topic_sensitive", query,num_query)
-    #run_classic_search("best_match", "topic_sensitive_parallel", query,num_query)
-    run_classic_search("best_match_opt", "topic_sensitive", query,num_query)
+    # #run_classic_search("best_match", "topic_sensitive_parallel", query,num_query)
+    #run_classic_search("best_match_opt", "topic_sensitive", query,num_query)
     #run_classic_search("best_match_opt", "topic_sensitive_parallel", query,num_query)
-"""
+
 
 """
 ''' *** BEST MATCH - PAGE RANK ********* '''
