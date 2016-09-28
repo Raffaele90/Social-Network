@@ -74,7 +74,7 @@ def toResultFile(path1, name_result_file, lista,rv,bm,ranking,time_bm,time_ranki
 
         csvfile.close()
 
-        '''with open(path1 + name_result_file + '_query_freq.csv', 'w') as csvfile:
+    with open(path1 + name_result_file + '_query_freq.csv', 'w') as csvfile:
 
         diz = dict()
         fieldnames2 = []
@@ -97,7 +97,7 @@ def toResultFile(path1, name_result_file, lista,rv,bm,ranking,time_bm,time_ranki
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerow({'Query': query})
-        csvfile.close()'''
+        csvfile.close()
 
 
 def run_classic_search(bm,ranking,query,num_query):
@@ -127,7 +127,7 @@ def run_classic_search(bm,ranking,query,num_query):
         t, rank, no_use = topicSensitiveRanking(graph, s, step, confidence, query, categories_graph, top_words,word_X_cat)
 
     elif ranking == "topic_sensitive_parallel":
-        t, rank = topic_sensitive_parallel(simple,graph, degree, len(graph), s, step, confidence, 16,categories_graph,top_words,word_X_cat,query)
+        t, rank = topic_sensitive_parallel(simple,graph, degree, len(graph), s, step, confidence, 4,categories_graph,top_words,word_X_cat,query)
 
     rankingelapsed = timeit.default_timer() - rankingTime
     print("Tempo "+ranking+"  --- %s seconds ---" % rankingelapsed)
@@ -231,7 +231,7 @@ print("Pickles Caricarti OK")
 #Query 5 = 1Top 1Center 1Low  "- video information"
 #Query 6 = 3 Top 5Low         ". news href= - svenska ratings informationthe wherever bundle"
 
-queries =["drugs"]
+queries =["google nba players"]
 size =len(queries)
 toRemove = []
 for query in queries:
@@ -260,108 +260,13 @@ for i in range(len(queries)):
     print("**** Query "+num_query+" ****")
     print()
 
-    run_classic_search("best_match", "page_rank", query, num_query)
+    #run_classic_search("best_match", "page_rank", query, num_query)
     #run_classic_search("best_match_opt", "page_rank", query, num_query)
 
     #run_classic_search("best_match", "page_rank_parallel", query,num_query)
     #run_classic_search("best_match_opt", "page_rank_parallel", query,num_query)
     run_classic_search("best_match", "topic_sensitive", query,num_query)
-    # #run_classic_search("best_match", "topic_sensitive_parallel", query,num_query)
+    run_classic_search("best_match", "topic_sensitive_parallel", query,num_query)
     #run_classic_search("best_match_opt", "topic_sensitive", query,num_query)
     #run_classic_search("best_match_opt", "topic_sensitive_parallel", query,num_query)
 
-
-"""
-''' *** BEST MATCH - PAGE RANK ********* '''
-start_time = timeit.default_timer()
-bestmatchTime_simple = timeit.default_timer()
-list_20_docs_simple = best_match(query, 0,word_advs,wordsInDoc)
-bestmatchTime_simple = timeit.default_timer() - bestmatchTime_simple
-print("Tempo  BEST MATCH --- %s seconds ---" % (bestmatchTime_simple))
-
-pageRankTime = timeit.default_timer()
-t,rank = pageRank2(graph,s,step,confidence)
-elapsed = timeit.default_timer() - pageRankTime
-print("Tempo  PAGE RANK --- %s seconds ---" % elapsed)
-
-print("BESTMATCH + PAGE RANK TOT --- %s seconds ---" % (timeit.default_timer() - start_time))
-toResultFile(path,"Simple_simple.csv",list_20_docs_simple,rank)
-
-
-print()
-
-''' ***+++ BEST MATCH OPTIMIZATION - PAGE RANK ********* '''
-start_time = timeit.default_timer()
-bestmatchTime_opt = timeit.default_timer()
-list_20_docs_opt = best_match_opt(query, 0,word_advs,sorted_advs)
-bestmatchTime_opt = timeit.default_timer() - bestmatchTime_opt
-print("Tempo  BEST MATCH OPT--- %s seconds ---" % (bestmatchTime_opt))
-
-pageRankTime = timeit.default_timer()
-t,rank = pageRank2(graph,s,step,confidence)
-print("Tempo  PAGE RANK --- %s seconds ---" % (timeit.default_timer() - pageRankTime))
-print("BEST MATCH OPT  + PAGE RANK TOT --- %s seconds ---" % (timeit.default_timer() - start_time))
-toResultFile(path,"Opt_Simple.csv",list_20_docs_opt,rank)
-
-print()
-''' *** BEST MATCH - PAGE RANK PARALLEL ********* '''
-
-
-degree,simple=create_struct_parallel(graph,4)
-
-start_time = timeit.default_timer()
-time, rank = pageRank3(simple, degree, len(graph), s, step, confidence, 16)
-elapsed = timeit.default_timer() - start_time
-
-print("BEST MATCH   + PAGE RANK PARALLEL TOT --- %s seconds ---" % (elapsed + bestmatchTime_simple))
-path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Results/"
-
-print()
-
-ran = dict()
-for r in range(len(rank)):
-    dizionario = rank[r]
-    for x in dizionario:
-        ran[x] = rank[r][x]
-toResultFile(path,"Simple_Parallel.csv",list_20_docs_simple,ran)
-
-
-''' *** BEST MATCH OPT - PAGE RANK PARALLEL ********* '''
-
-degree,simple=create_struct_parallel(graph,4)
-
-start_time = timeit.default_timer()
-time, rank = pageRank3(simple, degree, len(graph), s, step, confidence, 16)
-elapsed = timeit.default_timer() - start_time
-
-print("BEST MATCH OPT  + PAGE RANK PARALLEL TOT --- %s seconds ---" % (elapsed + bestmatchTime_opt))
-path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Results/"
-
-ran = dict()
-for r in range(len(rank)):
-    dizionario = rank[r]
-    for x in dizionario:
-        ran[x] = rank[r][x]
-toResultFile(path,"Opt_Parallel.csv",list_20_docs_opt,ran)
-
-print()
-
-''' *** BEST MATCH - TOPIC SENSITIVE ********* '''
-start_time = timeit.default_timer()
-bestmatchTime_simple = timeit.default_timer()
-list_20_docs_simple = best_match(query, 0,word_advs,wordsInDoc)
-bestmatchTime_simple = timeit.default_timer() - bestmatchTime_simple
-print("Tempo  BEST MATCH --- %s seconds ---" % (bestmatchTime_simple))
-
-topicsensitiveTime = timeit.default_timer()
-t,rank = topicSensitiveRanking(graph,s,step,confidence,query,categories_graph,top_words)
-elapsed = timeit.default_timer() - topicsensitiveTime
-print("Tempo  Topic Sensitive --- %s seconds ---" % elapsed)
-
-print("BESTMATCH + TOPIC SENSITIVE TOT --- %s seconds ---" % (timeit.default_timer() - start_time))
-toResultFile(path,"Simple_sensitive.csv",list_20_docs_simple,rank)
-
-
-print()
-
-"""

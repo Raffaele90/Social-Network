@@ -184,10 +184,3 @@ def pageRank3(graph,degree,n,s,step,confidence,num_jobs):
     
   return time, rank
 
-
-#file_graph = open("/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/PageRank/Complete_Graph_Dataset.pickle", "rb")
-#graph = pickle.load(file_graph)
-#time,rank = pageRank2(graph,0.95,70,0)
-
-#print(rank)
-#print(time)

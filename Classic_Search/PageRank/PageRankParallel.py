@@ -10,21 +10,9 @@ from joblib import Parallel, delayed
 
 def create_struct_parallel(graph,k):
 
-    subsets = list()
     subsets = split_g(graph,k)
     graph_splitted=crea_mat(k)
     graph_splitted=scatter(graph_splitted,graph,subsets)
-
-    '''if 'http://europa.eu/pol/emu/index_it.htm' in graph_splitted[0][0]:
-        x=graph_splitted[0][0]['http://europa.eu/pol/emu/index_it.htm']
-
-    if 'http://europa.eu/pol/emu/index_it.htm' in graph_splitted[0][1]:
-        z=graph_splitted[0][1]['http://europa.eu/pol/emu/index_it.htm']
-    if 'http://europa.eu/epso/index_it.htm'in graph_splitted[1][0]:
-        q=graph_splitted[1][0]['http://europa.eu/epso/index_it.htm']
-    if 'http://europa.eu/epso/index_it.htm' in graph_splitted[1][1]:
-        u=graph_splitted[1][1]['http://europa.eu/epso/index_it.htm']
-'''
     degrees=getdeg(graph,k,subsets)
 
 
@@ -94,43 +82,4 @@ def getdeg(g,k,subsets):
         for k in subsets[j]:
             deg[j][k]=len(g[k])
     return deg
-
-
-
-path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Pickles/Complete_Graph_Dataset.pickle"
-file_graph = open(path, "rb")
-graph = pickle.load(file_graph)
-
-
-
-# Graph is represented with its adjacency lists
-simple = dict()
-simple['x'] = {'y','z','w'}
-simple['y'] = {'x','w'}
-simple['z'] = {'x'}
-simple['w'] = {'y','z'}
-
-degree,simple=create_struct_parallel(simple,2)
-
-
-start_time = timeit.default_timer()
-time, rank = pageRank3(simple, degree, 4, 0.85, 60, 0, 4)
-elapsed = timeit.default_timer() - start_time
-
-print (rank[0:20])
-print(elapsed)
-
-
-# Graph is represented with its adjacency lists
-simple = dict()
-simple['x'] = {'y','z','w'}
-simple['y'] = {'x','w'}
-simple['z'] = {'x'}
-simple['w'] = {'y','z'}
-
-start_time = timeit.default_timer()
-time2, rank2 = pageRank2(simple,0.85,60,0)
-elapsed2 = timeit.default_timer() - start_time
-
-print(rank2, time2, elapsed2)
 

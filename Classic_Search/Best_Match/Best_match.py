@@ -141,7 +141,6 @@ def best_match(query, threshold,word_advs,wordsInDoc):
                #If we would like to count the occurrences, then we must increment the weights not by 1, but by the number of occurrence of that word in the document
 
 
-    #list_20_docs = list(reversed(sorted(adv_weights.items(), key=lambda x:x[1])))[:20]
 
     list_20_docs.clear()
     for doc in adv_weights:
@@ -175,9 +174,6 @@ def insert_doc_1(key,value,l):
 
 def sensitive_best_match(query,threshold,word_advs,wordsInDoc):
     adv_weights = dict()
-    path = "/Users/raffaeleschiavone/PycharmProjects/Social-Network/Classic_Search/Best_Match/"
-
-
     query_words = query.split()
 
     #For every word we look at each document in the list and we increment the document's weight
@@ -201,21 +197,5 @@ def sensitive_best_match(query,threshold,word_advs,wordsInDoc):
             app.append(adv_weights[doc])
             list_all.append(app)#list_20_docs = insert_doc_1(doc,adv_weights[doc],list_20_docs)
 
-    #print(adv_weights)
-    '''for d in best_docs:
-        print(d)
-        print(adv_weights[d])'''
-
-
     return list_all#return list_20_docs[0:19]
 
-#create_word_advs()
-#start_time = time.time()
-
-#set = best_match("Facebook Twitter information",0)
-#print("--- %s seconds ---" % (time.time() - start_time))
-#print(set)
-
-#set2 = exact_match("prova esame")
-#print(set)
-#print(set2)

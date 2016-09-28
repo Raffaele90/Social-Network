@@ -88,17 +88,18 @@ def topicSensitiveRanking(graph,s,step,confidence,query,categories_graph,pickwor
     time = 0
 
     # Initialization
-    rank = dict()
     best_categories=getBestCat(query,pickwords,word_cat)
     best_categories=calculate_percentage(best_categories)
 
     rank=topicSensitiveVector(graph,categories_graph,best_categories)
 
+    listaraf = list(reversed(sorted(rank.items(), key=lambda x: x[1])))[:40]
+
+    print(listaraf)
     sum = 0
     for r in rank:
         sum +=rank[r]
 
-    print("SOMMA VECTOR RANK "+str(sum))
     tmp = dict()
     nodes = graph.keys()
     n = len(nodes)
@@ -219,6 +220,10 @@ def topic_sensitive_parallel(graph,graph2, degree, n, s, step, confidence, num_j
     # Block[i] contains the info of nodes in the i-th subset.
 
     rank_sens=topicSensitiveVector(graph2,categories_graph,best_categories)
+    listaraf = list(reversed(sorted(rank_sens.items(), key=lambda x: x[1])))[:40]
+
+    print(listaraf)
+
     # Info: rank
     rank = []
     for i in range(k):

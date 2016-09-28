@@ -236,9 +236,6 @@ def sort_docs (word_advs):
     return sorted_w
 
 
-
-
-
 def insert_sort_list (lista,doc,freq):
     l = list()
     l.append(doc)
